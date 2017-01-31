@@ -20,7 +20,7 @@ box twice when click the ad, you can set it as: 1) click “edit”; 2) switch o
 
 **Image to be inserted **
 
-**Notes : **
+**Notes:**
 1. We provide you with SDK that gives you the freedom to choose your favourite advertising agency. Apart from the bidding and remnant ,other ad platforms are third- party. The App key needed should be register and apply from corresponding official website, and then configure them to the corresponding platform at Adview background.
 2. If you are fresher, you don’t know much about ad platform, which ad platform to choose or which ad platform revenue is stable, we suggest you use bidding first.
 3. Bidding and remnant ads need to complement market information at background, and you will not get formal ads until pass reviewed. Before that all are test ads which do not charge.
@@ -467,43 +467,43 @@ Developers add the above content in the Mainfest files:
 
 (must mark when upload ,otherwise will not pass review);
 AdViewTargeting.setChannel, the former interface has been invalid;
-24
 Currently the channels that Adview support are as follow:
-EOE(????)
-GOOGLEMARKET(????? ?)
-APPCHINA(???)
-HIAPK(????)
-GFAN(??)
-GOAPK(??)
-NDUOA(N??)
-91Store(??91)
-LIQUCN(??)
-WAPTW(??)
-ANDROIDCN(? ???)
-GGDWON(G??)
-ANDROIDAI(????)
-STARANDROID(????)
-ANDROIDD(??)
-YINGYONGSO(???)
-IMOBILE(????)
-SOUAPP(? ??)
-MUMAYI(???)
-MOBIOMNI(??)
-PAOJIAO(???)
-AIBALA(?????)
-COOLAPK(???)
-ANFONE(??)
-APKOK(???)
-360MARKET(360??)
-25
-If there’s no configuration or configure other value, all seemed as “OTHER”;
-There are links to various markets in Mobile Ads (http://t.adview.cn/);
-XII. Frequently Asked Questions
-12.1 What if an application wants to mix (ProGuard)?
-AdView is dynamically call, it does not have to mix. Advertising agency code has
-been independently mixed, if you need to mixed your own code, you can add the
-following content at the beginning of the file proguard.cfg. More details please re-
-fer to the code in sample. ( The below code can be copied in the sample)
+      -EOE(????)
+      -GOOGLEMARKET(????? ?)
+      -APPCHINA(???)
+      -HIAPK(????)
+      GFAN(??)
+      GOAPK(??)
+      NDUOA(N??)
+      91Store(??91)
+      LIQUCN(??)
+      WAPTW(??)
+      ANDROIDCN(? ???)
+      GGDWON(G??)
+      ANDROIDAI(????)
+      STARANDROID(????)
+      ANDROIDD(??)
+      YINGYONGSO(???)
+      IMOBILE(????)
+      SOUAPP(? ??)
+      MUMAYI(???)
+      MOBIOMNI(??)
+      PAOJIAO(???)
+      AIBALA(?????)
+      COOLAPK(???)
+      ANFONE(??)
+      APKOK(???)
+      360MARKET(360??)
+
+If there’s no configuration or configure other value, all seemed as “OTHER”; There are links to various markets in Mobile Ads (http://t.adview.cn/);
+
+#XII. Frequently Asked Questions
+
+**12.1 What if an application wants to mix (ProGuard)?**
+
+AdView is dynamically call, it does not have to mix. Advertising agency code has been independently mixed, if you need to mixed your own code, you can add the following content at the beginning of the file proguard.cfg. More details please refer to the code in sample. 
+( The below code can be copied in the sample)
+```
 #The below is used for AdView SDK settings,only instead
 for your app
 -dontwarn
@@ -712,31 +712,36 @@ com.easou.ecom.mads.**
 31
 }
 -keep class cn.pro.ad.sdk.*
-Currently Adview SDK mixed support proguard4.6 version or above, developers
-can go to the proguard official website http://sourceforge.net/ projects/proguard/
-files/proguard/ to download 4.6 version or above. If you want to upgrade, just re-
-place the downloaded version with “android-sdk- windowstoolsproguard”
-12.2 Contact us
-Users can login Adview, there are service E-mail, service contact number and enter-
-prise QQ customer service at the bottom of the homepage
- 
-12.3 How to use sample
-12.3.1 Upload sample project , method 1
+
+```
+Currently Adview SDK mixed support proguard4.6 version or above, developers can go to the proguard official website http://sourceforge.net/ projects/proguard/ files/proguard/ to download 4.6 version or above. If you want to upgrade, just replace the downloaded version with “android-sdk- windowstoolsproguard”
+
+**12.2 Contact us**
+
+Users can login Adview, there are service E-mail, service contact number and enterprise QQ customer service at the bottom of the homepage
+**Insert Image here ** 
+
+**12.3 How to use sample**
+
+**12.3.1 Upload sample project , method 1**
+
 Process 1
-32
+**Insert Image here ** 
  
 Process 2
-33
+**Insert Image here ** 
  
 Process 3
-34
+**Insert Image here ** 
  
 Select the sample category in the SDK package
-12.3.2 upload sample project, method 2
+
+**12.3.2 upload sample project, method 2**
 Process 1
-35
+**Insert Image here ** 
  
 Process 2
 Select the sample directory in SDK package ,default target is 1.6;
-36
+**Insert Image here ** 
+
  
