@@ -293,6 +293,7 @@ Add a listview to layout file, e.g :
 
 Add the following code to your activity:
 
+```
 //Initialized native ads should custom ad layout in advance, and apply native ad ID at app background
 AdViewNativeManager.getInstance(this).requestAd(this,MainActivity.key2, 2,this); 
 //set native callback interface
@@ -321,10 +322,11 @@ the status of current downloading contents.
 public void onAdStatusChanged (int arg0) {
 }
 });
-19
+```
+
 8.2 Ad Native Event Handling
-To receive events from ad, you should implement an event listener interface Ad-
-ViewNativeListener.
+To receive events from ad, you should implement an event listener interface AdViewNativeListener.
+```
 public interface AdViewNativeListener {
 /**
 * This function is called when the ad request
@@ -341,21 +343,27 @@ public void onAdReceived(String key);
 */
 public void onAdStatusChanged (String key ,int
 status);
-IX. Create video advertising
-9.1 create video advertising
+
+```
+
+##IX. Create video advertising
+**9.1 create video advertising**
+
 Add the following code in activity,
-20
+```
 //Request video ads after initialization. Request and
 display ads should be used separately.
 AdViewVideoManager.getInstance(this).requestAd(this,Main
 Activity.key3,this);
 //set video callback interface
 // Call display ad after ad request succeed.
-AdViewVideoManager.getInstance(this).playVideo(this,
-MainActivity.key3);
-9.2 Ad Video Event Handling
-To receive events from ad, you should implement an event listener interface Ad-
-ViewVideoListener.
+AdViewVideoManager.getInstance(this).playVideo(this,MainActivity.key3);
+```
+
+**9.2 Ad Video Event Handling**
+
+To receive events from ad, you should implement an event listener interface AdViewVideoListener.
+```
 public interface AdViewVideoListener{
 /**
 * Play start event notification
@@ -372,26 +380,27 @@ public void onAdClose(String key);
 /**
 * Request succeed notification
 */
-21
+
 public void onAdReceived(String key);
 /**
 * Request failed notification
 */
 public void onAdFailed (String key); }
-Note:
+```
+**Note:**
+
 You can refer to the code of AdVideoActivity in AdView Demo Project.
-X. Add custom ad platform
-Sometimes developers would like to add a platform which is not aggregated, Ad-
-view provide ways to meet this demand.
-There’s a “Custom ad platform” in add ad platform . Developer needs to fill in
-app ID1, this is the name of a function which needs client side to complete. The
-function of this function is to call the ad platform interface . As for App ID2, just fill
-in something, otherwise you cannot save it.
- 
-22
-10.1 The example that referred code Demo provide is
-the implementation of Amazon ad;
-10.2 Custom function implementation
+
+##X. Add custom ad platform
+
+Sometimes developers would like to add a platform which is not aggregated, Adview provide ways to meet this demand.
+
+There’s a “Custom ad platform” in add ad platform . Developer needs to fill in app ID1, this is the name of a function which needs client side to complete. The function of this function is to call the ad platform interface . As for App ID2, just fill in something, otherwise you cannot save it.
+ ** Insert Image here **
+
+**10.1 The example that referred code Demo provide is the implementation of Amazon ad; **
+**10.2 Custom function implementation **
+```
 // you can visit https://developer.amazon.com/sdk/
 mobileads.html
 // Must with: final AdViewAdapter adapter, final String
@@ -445,10 +454,17 @@ getAdViewLayout(AdBannerActivity.this,
 key), adView, key); AdTargetingOptions adOptions = new
 AdTargetingOptions(); adView.loadAd(adOptions);
 }
-XI. Appointed app channel
+
+```
+
+#XI. Appointed app channel
 Developers add the above content in the Mainfest files:
+```
 <meta-data android:name="AdView_CHANNEL" android:value=“GFAN">
-</meta-data>;
+</meta-data>
+
+```
+
 (must mark when upload ,otherwise will not pass review);
 AdViewTargeting.setChannel, the former interface has been invalid;
 24
