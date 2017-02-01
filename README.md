@@ -60,13 +60,13 @@ Required permissions should be added ( complete code please refer to AndroidMani
 
 **Note:**
 
--**INTERNET:** allow to visit network (required)
--**ACCESS_NETWORK_STATE:** allow to visit various status of mobile phone (required)
--**ACCESS_COARSE_LOCATION**: allow a procedure to visit CellID or WIFI to get the rough position.
--**ACCESS_FINE_LOCATION:** allow a procedure to visit the accurate position (for example, GPS)
--**ACCESS_WIFI_STATE:** allow a procedure to visit WIFI status
--**WRITE_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device and can cache ads.
--**READ_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device
+-**INTERNET:** allow to visit network (required)                                                                                         
+-**ACCESS_NETWORK_STATE:** allow to visit various status of mobile phone (required)                                                     
+-**ACCESS_COARSE_LOCATION**: allow a procedure to visit CellID or WIFI to get the rough position.                                       
+-**ACCESS_FINE_LOCATION:** allow a procedure to visit the accurate position (for example, GPS)                                           
+-**ACCESS_WIFI_STATE:** allow a procedure to visit WIFI status                                                                           
+-**WRITE_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device and can cache ads.                                       
+-**READ_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device                                                           
 
 
 **3.2 Add Activity declaration**
@@ -443,11 +443,14 @@ Sometimes developers would like to add a platform which is not aggregated, Advie
 
 There’s a “Custom ad platform” in add ad platform . Developer needs to fill in app ID1, this is the name of a function which needs client side to complete. The function of this function is to call the ad platform interface . As for App ID2, just fill in something, otherwise you cannot save it.
  
- ![custom ad platform](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VI.png)
+ 
+![custom ad platform](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VI.png)
  
 
-**10.1 The example that referred code Demo provide is the implementation of Amazon ad; **
-**10.2 Custom function implementation **
+ **10.1 The example that referred code Demo provide is the implementation of Amazon ad; **                                               
+
+ **10.2 Custom function implementation **                                                                                                 
+
 ```
 // you can visit https://developer.amazon.com/sdk/
 mobileads.html
@@ -777,22 +780,28 @@ Users can login Adview, there are service E-mail, service contact number and ent
 
 **12.3.1 Upload sample project , method 1**
 
-Process 1 
+Process 1                                                                                                                               
+
 ![process1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VIII.png)
  
-Process 2
+Process 2                                                                                                                               
+
 ![process2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/IX.png) 
  
-Process 3
+Process 3                                                                                                                               
+
 ![process3](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/X.png)
 
 Select the sample category in the SDK package
 
 **12.3.2 upload sample project, method 2**
-Process 1
+
+ Process 1                                                                                                                               
+
 ![process 12.3.2-1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/XI.png)
 
-Process 2
+ Process 2                                                                                                                               
+
 Select the sample directory in SDK package ,default target is 1.6;
 ![process 12.3.2-2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/XII.png)
  
