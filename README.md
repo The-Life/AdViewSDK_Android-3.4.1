@@ -6,23 +6,19 @@
 4. Click “APP management” page→Configure : enter adID in“Not set”, turnon the switch, set the capacity to 100%, click “Save”. If you need more platform, click “Add ad platform”. The cumulative percentage must be
 100%.you can use AdView Auction Ads. Generally recommended number of platforms is 1-3.
 
-***Image to be inserted ***
-[Image 1] (https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
-Images-for-github/I.png 
+![Home page](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
 
 1. Homepage -> Android SDK download,or APP management -> Down-
-load Android SDK,can get AdView SDK package, including text and
-Demo;
- 
+load Android SDK,can get AdView SDK package, including text and Demo;
 
-**Image to be inserted **
+![Homepage-1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/II.png) 
 
 1. When open bidding or remnant, if you need to pop-up confirmation
 box twice when click the ad, you can set it as: 1) click “edit”; 2) switch on
 “confirm tips” . Ignore it if you don’t need this process.
+![Bidding](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.1.png)
 
-
-**Image to be inserted **
+![bidding-2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.2.png)
 
 **Notes:**
 
@@ -39,6 +35,7 @@ box twice when click the ad, you can set it as: 1) click “edit”; 2) switch o
 1. Get Adview SDK package from the website and unzip it. The libs folder contains the SDK for all ad platforms. (README.pdf has the ad platform instructions corresponding to each jar.)
 2. Please put AdViewSDK_Android.jar, android-support-v4.jar into your application.
 3. Add other ad platform SDK that App may use in the same way. ( Can only use the jar provided by Adview. Use jar from other channels will make the ad cannot display.
+
 
 ***Image to be inserted ***
  
