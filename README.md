@@ -3,19 +3,14 @@
 1. Visit AdView website http://www.adview.com and register Adview Account.
 2. Login "My Products" page, select "Publish App”
 3. Select “Android” follow the prompts to complete the relevant information About the application and you will get the sole unique SDK key
-4. Click “APP management” page→Configure : enter adID in“Not set”, turnon the switch, set the capacity to 100%, click “Save”. If you need more platform, click “Add ad platform”. The cumulative percentage must be
-100%.you can use AdView Auction Ads. Generally recommended number of platforms is 1-3.
+4. Click “APP management” page→Configure : enter adID in“Not set”, turn on the switch, set the capacity to 100%, click “Save”. If you need more platform please turn on the switch, click “Add ad platform” and configure those respected ids. The cumulative percentage must be 100%.you can use AdView Auction Ads. Generally recommended number of platforms is 1-3.
 
 ![Home page](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
 
-5. Homepage -> Android SDK download,or APP management -> Down-
-load Android SDK,can get AdView SDK package, including text and Demo;
+5. When open bidding or remnant, if you need to pop-up confirmation box twice when click the ad, you can set it as:
+1) click “edit”; 
+2) switch on “confirm tips” . Ignore it if you don’t need this process.
 
-![Homepage-1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/II.png) 
-
-6. When open bidding or remnant, if you need to pop-up confirmation
-box twice when click the ad, you can set it as: 1) click “edit”; 2) switch on
-“confirm tips” . Ignore it if you don’t need this process.
 ![Bidding](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.1.png)
 
 ![bidding-2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.2.png)
@@ -73,17 +68,19 @@ Required permissions should be added ( complete code please refer to AndroidMani
 
 Some platform need to declare activity to work normal. Declaration is contained in application label, more details please refer to AndroidManifest in Demo. 
 
-**Configurations that bidding ads should add:**
+**Configurations that adview bidding ads should add:**
+
 ```
 <service android:name="com.kyview.DownloadService" />
 <activity android:name="com.kyview.AdviewWebView" />
 <activity android:name="com.kyview.AdActivity" />
-<!-- Adivew bidding video -->
-<activity
-android:name="com.kuaiyou.video.vast.activity.VASTAdActi
-vity" android:hardwareAccelerated="true"
+<!-- Adiview bidding video -->
+<activity android:name="com.kuaiyou.video.vast.activity.VASTAdActivity" 
+android:hardwareAccelerated="true"
 android:screenOrientation="landscape"/>
-<activityandroid:name="com.kuaiyou.video.AdviewWebView"/>
+
+<activity android:name="com.kuaiyou.video.AdviewWebView"/>
+
 ```
 
 ##IV. Acquire ad configurations
