@@ -4,21 +4,21 @@
 ##** About AdViewSDK_Android-3.4.1
 #Jeevan can change .
 1. Clone or download AdViewSDK_Android-3.4.1 package .In the AdViewSDK_Android-3.4.1 contanis some important files as AdViewDemo,libs,umeng_res and wiyun_res.
+
 **AdViewDemo**
 AdViewDemo folder for Android Demo Project.It has all types of advertisement sample code with explanation.
+
 **libs**
 libs folder ,it contains the SDK for all ad platforms. 
 (README.pdf has the ad platform instructions corresponding to each jar.)
+
 **umeng_res**
 To integrate Umeng SDK, you need to put the files of umeng_res given in the demo to application res , and add corresponding permissions .
+
 **wiyun_res**
 To integrate Wiyun SDK, you need to put the files of wiyun_res given in the demo to application res , and add corresponding permissions .
 
 
-
-
-
-#Jeevan write explanation here 
 
 ##**I. Register and configure SDK-KEY**
 1. Visit AdView website http://www.adview.com and register Adview Account.
