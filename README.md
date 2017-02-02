@@ -145,8 +145,9 @@ AdViewSpreadManager.getInstance(this).init(initConfig,MainActivity.keySet);
 **5.1 Add ads through adding code**
 
 Add a banner code to layout file,
+
 ```
-<LinearLayout
+<FrameLayout
       android:id="@+id/ad_view"
       android:layout_width="match_parent"
       android:layout_height="150dp"
@@ -155,12 +156,67 @@ Add a banner code to layout file,
 
 Add the following code to your activity:
 
+
 ```
-// request banner ads after initialization
-AdViewBannerManager.getInstance(this).requestAd(this,key, this);
-// Gets the currently requested banner View?upload it to your own layout.
-View view = AdViewBannerManager.getInstance(this).getAdViewLayout(this,key);layout.addView(view);
+        //Basic Initialization
+        InitConfiguration initConfiguration = new InitConfiguration.Builder(
+                this).setUpdateMode(InitConfiguration.UpdateMode.EVERYTIME)
+                .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
+                .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+				.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+				.setRunMode(InitConfiguration.RunMode.TEST)
+                .build();
+                
+      //Initialization for Banner
+      AdViewBannerManager.getInstance(this).init(initConfiguration,
+                new String[]{MainActivity.SDK_KEY});      
+                
+      // request banner ads after initialization
+     AdViewBannerManager.getInstance(this).requestAd(this,key, this);
+     
+     // Gets the currently requested banner View,upload it to your own layout.
+     View view = AdViewBannerManager.getInstance(this).getAdViewLayout(this,key);layout.addView(view);
+             
+
 ```
+
+##5.2 Ad Banner events handling
+
+To receive events from ad, you should implement an event listener interface AdViewBannerListener.
+
+```
+public interface AdViewBannerListener{
+/**
+ * Use this function when the ad is clicked
+ */
+public void onAdClick(String key);
+
+/**
+ * Use this function when the ad is displayed
+ */
+public void onAdDisplay(String key);
+
+/**
+ * Use this function when the ad is closed
+ */
+public void onAdClose(String key);
+
+/**
+ * Use this function only when the ad is interrupted
+ by abnormity or failure
+ */
+public void onAdFailed(String key);
+
+/**
+ * once ad is Ready while this function will triggered
+ */
+ public void onAdReady(String key);
+}
+
+```
+
+**Note:**
+You can refer to the code of AdBannerActivity in AdViewDemo Project.
 
 **Increase part of the platform size Interface:**
 
@@ -170,38 +226,6 @@ If you want banner advertisement directly from ad networks use this below config
 
 ![Add types of ads](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/V.png)
 
-##5.2 Ad Banner events handling
-
-To receive events from ad, you should implement an event listener interface AdViewBannerListener.
-
-```
-public interface AdViewBannerListener{
-/**
-* Use this function when the ad is clicked
-*/
-public void onAdClick(String key);
-/**
-* Use this function when the ad is displayed
-*/
-public void onAdDisplay(String key);
-/**
-* Use this function when the ad is closed
-*/
-public void onAdClose(String key);
-/**
-* Use this function only when the ad is interrupted
-by abnormity or failure
-*/
-public void onAdFailed(String key);
-/**
-* Test function
-*/
-public void onAdReady(String key);
-}
-```
-
-**Note:**
-You can refer to the code of AdBannerActivity in AdView Demo Project.
 
 ##VI. Create interstitial advertising
 
