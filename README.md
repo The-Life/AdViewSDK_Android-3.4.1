@@ -268,44 +268,54 @@ To receive events from ad, you should implement an event listener interface **Ad
 ```
 public interface AdViewInstlListener {
 /**
-* Use this function when the ad is clicked
-*/
+ * Use this function when the ad is clicked
+ */
 public void onAdClick(String key);
-/**
 
-* Use this function when the ad is displayed
-*/
+/**
+ * Use this function when the ad is displayed
+ */
 public void onAdDisplay(String key);
+
 /**
-* Use this function when the ad is disappeared
-*/
+ * Use this function when the ad is disappeared
+ */
 public void onAdDismiss(String key);
+
 /**
-* Use this function when the ad is successfully
-received
-*/
+ * Use this function when the ad is successfully received
+ */
 public void onAdReceived(String key);
+
 /**
-* Use this function when the ad is failed
-*/
+ * Use this function when the ad is failed
+ */
 public void onAdFailed (String key);
+
 }
+
 ```
 
 **6.3 Create custom style interstitial**
 
 ```
 // You need to set the user-managed mode when initialization, and you must manually call the display
-after the setting InitConfiguration.setInstlControlMode(InstlControlMode.USERCONTROL);
+//after the setting   
+InitConfiguration.setInstlControlMode(InstlControlMode.USERCONTROL);
+
 // request interstitial ads after initialization 
 AdViewInstlManager.getInstance(this).requestAd(this,MainActivity.key2);
+
 // You need to call it when the ads need to be displayed, the return is not null (review) means there’s an ad to return, otherwise it does not get ads.
 // The returned view can be placed in a customcontainer, such as dialog
 AdViewInstlManager.getInstance(this).getInstlView (key);
+
 // Display report method should be called when successfully display (required)
 AdViewInstlManager.getInstance(this).reportImpression(key);
+
 // When the ad is clicked, the click event handling method should be called ,otherwise there will no response(required)
 AdViewInstlManager.getInstance(this).reportClick(key);
+
 ```
 
 **Note:**
@@ -354,8 +364,7 @@ public interface AdViewSpreadListener {
 public void onAdDisplay(String key);
 
 /**
- * This function is called when the ad request
- succeeds.
+ * This function is called when the ad requestsucceeds.
  */
 public void onAdReceived(String key);
 
@@ -365,8 +374,7 @@ public void onAdReceived(String key);
 public void onAdClick(String key);
 
 /**
- * This function is called when the ad request
- failed.
+ * This function is called when the ad request failed.
  */
 public void onAdFailed(String key);
 
@@ -459,15 +467,15 @@ Log.i("native information ", "data.descript: " + data.descript + "\ndata.icon: "
 }
 
 /**
-* This function is called when the ad requests failed.
-*/
+ * This function is called when the ad requests failed.
+ */
 @Override
 public void onFailedReceivedAd(String arg0) {
 }
 /**
-* This function is called when download ads, to back to
-the status of current downloading contents.
-*/
+ * This function is called when download ads, to back to
+   the status of current downloading contents.
+ */
 @Override
 public void onAdStatusChanged (int arg0) {
 }
@@ -578,27 +586,26 @@ There’s a “Custom ad platform” in add ad platform . Developer needs to fil
  **10.2 Custom function implementation **                                                                                                 
 
 ```
-// you can visit https://developer.amazon.com/sdk/
-mobileads.html
-// Must with: final AdViewAdapter adapter, final String
-key these two parameter
+// you can visit https://developer.amazon.com/sdk/mobileads.html
+// Must with: final AdViewAdapter adapter, final String key these two parameter
 // Otherwise will result in the failure in custom ad
-public void amazon_proc(final AdViewAdapter adapter,
-final String key){
+
+public void amazon_proc(final AdViewAdapter adapter,final String key){
+
 // TODO Auto-generated method stub
 AdRegistration.enableLogging(this, true);
 AdRegistration.enableTesting(this, true);
 AdRegistration.setAppKey(this, "sample-app- v1_pub-2");
+
 // Create an example of amazon in adview
-adView = new AdLayout(this, AdSize.AD_SIZE_320x50); //
-appointed listen interface
+adView = new AdLayout(this, AdSize.AD_SIZE_320x50);
+
+//appointed listen interface
 adView.setListener(new AdListener() {
 @Override
-Log.d("AdViewSample", arg1.getAdType().toString()
-+ " Ad loaded successfully.");
-// after the ad request succeed, start the
-timer and request another ad when time’s
-up.
+Log.d("AdViewSample", arg1.getAdType().toString()+ " Ad loaded successfully.");
+
+// after the ad request succeed, start the timer and request another ad when time’s up.
 adapter.reportImpression(key);
 adapter.rotateDelayedAd(key);
 }
@@ -606,30 +613,24 @@ adapter.rotateDelayedAd(key);
 public void onAdExpanded(AdLayout arg0) {
 // TODO Auto-generated method stub
 }
-23
 @Override
 public void onAdCollapsed(AdLayout arg0) {
 // TODO Auto-generated method stub
 }
 @Override
-public void onAdFailedToLoad(AdLayout arg0, AdError
-arg1) {
+public void onAdFailedToLoad(AdLayout arg0, AdError arg1) {
 // TODO Auto-generated method stub
-Log.w("AdViewSample","Ad failed to load. Code: "
-+ arg1.getResponseCode() +
-", Message: "
-+
-arg1.getResponseMessage());
+Log.w("AdViewSample","Ad failed to load. Code: "+ arg1.getResponseCode() +", Message: "+arg1.getResponseMessage());
+
 // start to request another ad when failed.
 adapter.rotatePriAd(key);
 }
 });
-AdViewBannerManager.getInstance(AdBannerActivity.this).a
-ddSubView(
-AdViewBannerManager.getInstance(AdBannerActivity.this) .
-getAdViewLayout(AdBannerActivity.this,
-key), adView, key); AdTargetingOptions adOptions = new
-AdTargetingOptions(); adView.loadAd(adOptions);
+AdViewBannerManager.getInstance(AdBannerActivity.this).addSubView(AdViewBannerManager.getInstance(AdBannerActivity.this) .
+getAdViewLayout(AdBannerActivity.this,key), adView, key); 
+AdTargetingOptions adOptions = new AdTargetingOptions(); 
+adView.loadAd(adOptions);
+
 }
 
 ```
