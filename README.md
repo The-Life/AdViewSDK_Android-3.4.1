@@ -882,3 +882,8 @@ public <init>(android.content.Context, android.util.AttributeSet);
 ```
 
  Currently Adview SDK mixed support proguard4.6 version or above, developers can go to the proguard official website http://sourceforge.net/ projects/proguard/files/proguard/ to download 4.6 version or above. If you want to upgrade, just replace the downloaded version with “android-sdk- windows\tools\proguard” 
+
+##**12.2 Contact us 
+
+Users can login Adview, there are service E-mail, service contact number and enterprise QQ customer service at the bottom of the homepage 
+![custom ad platform](https://github.com/vinith-cit/Images-for-github/blob/master/VII.png)
