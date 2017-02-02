@@ -2,17 +2,27 @@
 
 ##**Contents**
 [I. Register and configure SDK-KEY](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#i-register-and-configure-sdk-key)
+
 [II.About AdViewSDK_Android-3.4.1](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#about-adviewsdk_android-341)
+
 [III. Add SDK](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#iii-add-sdk)
+
 [IV. AndroidManifest.xml text configuration](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#iv-androidmanifestxml-text-configuration)
+
 [V. Acquire ad configurations](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#v-acquire-ad-configurations)
+
 [VI. Create banner advertising](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#vi-create-banner-advertising)
 [VII. Create interstitial advertising](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#vii-create-interstitial-advertising)
 [VIII. Create opening screen ad](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#viii-create-opening-screen-ad)
+
 [IX. Create native advertising ](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#ix-create-native-advertising)
+
 [X. Create video advertising](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#x-create-video-advertising)
+
 [XI. Add custom ad platform](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xi-add-custom-ad-platform)
+
 [XII. Appointed app channel](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xii-appointed-app-channel)
+
 [XIII. Frequently Asked Questions](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xiii-frequently-asked-questions)
 
 
