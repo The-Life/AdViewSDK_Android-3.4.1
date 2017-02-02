@@ -8,12 +8,12 @@
 
 ![Home page](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
 
-1. Homepage -> Android SDK download,or APP management -> Down-
+5. Homepage -> Android SDK download,or APP management -> Down-
 load Android SDK,can get AdView SDK package, including text and Demo;
 
 ![Homepage-1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/II.png) 
 
-1. When open bidding or remnant, if you need to pop-up confirmation
+6. When open bidding or remnant, if you need to pop-up confirmation
 box twice when click the ad, you can set it as: 1) click “edit”; 2) switch on
 “confirm tips” . Ignore it if you don’t need this process.
 ![Bidding](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.1.png)
@@ -671,137 +671,4 @@ com.chance.listener.GetAdListListener { public
 android.app.Service { public *;
 }
 -keep class
-com.chance.report.ReportData { public
-*;
-}
--keep class
-com.chance.engine.DownloadData { public
-*;
-}
-}
--keep class com.chance.recommend.** {*;}
--keep class com.chukong.android.crypto.** {*;}
--keep class com.chance.d.** {*;}
-#Touch mix ends
--keep class com.suizong.mobile.** {*;}
--keep class com.go2map.mapapi.** {*;}
--keep public class cn.Immob.sdk.** {*;}
--keep public class cn.Immob.sdk.controller.** {*;}
--keep class net.youmi.android.** {*;}
-29
--keeppackagenames cn.smartmad.ads.android
--keeppackagenames I
--keep class cn.smartmad.ads.android.* {*;}
--keep class I.* {*;}
--keep public class MobWin.*
--keep public class MobWin.cnst.*
--keep class com.tencent.lbsapi.*
--keep class com.tencent.lbsapi.core.*
--keep class LBSAPIProtocol.*
--keep class com.tencent.lbsapi.core.QLBSJNI {
-*;
-}
--keeppackagenames com.adchina.android.ads
--keeppackagenames com.adchina.android.ads.controllers
--keeppackagenames com.adchina.android.ads.views
--keeppackagenames com.adchina.android.ads.animations
--keep class com.adchina.android.ads.*{*;}
--keep class com.adchina.android.ads.controllers.*{*;}
--keep class com.adchina.android.ads.views.*{*;}
--keep class com.adchina.android.ads.animations.*{*;}
--optimizationpasses 5
--dontusemixedcaseclassnames
--dontskipnonpubliclibraryclasses
--dontpreverify
--verbose
--optimizations !code/simplification/arithmetic,!field/
-*,!class/ merging/*
--keep public class * extends android.app.Activity
--keep public class * extends android.app.Application
--keep public class * extends android.app.Service
--keep public class * extends
-android.content.BroadcastReceiver
--keep public class * extends
-android.content.ContentProvider
--keep public class * extends
-android.app.backup.BackupAgentHelper
-30
--keep public class * extends
-android.preference.Preference
--keep public class
-com.android.vending.licensing.ILicensingService
--keepclasseswithmembers class
-* { native <methods>;
-}
--keepclasseswithmembers class * {
-public <init>(android.content.Context,
-android.util.AttributeSet);
-}
--keepclasseswithmembers class * {
-public <init>(android.content.Context,
-android.util.AttributeSet,
-int);
-}
--keepclassmembers enum *
-{ public static **[]
-values();
-public static ** valueOf(java.lang.String);
-}
--keep class * implements android.os.Parcelable
-{ public static final android.os.Parcelable
-$Creator *;
-}
--keep class com.mediav.** {*;}
--keep class org.adver.score.**{*;}
--keep class
-com.easou.ecom.mads.**
-{ public protected *;
-}
-}
--keep class com.imopan.plugin.spot.** {
-*; }
--keep class com.jd.**{
-*;
-31
-}
--keep class cn.pro.ad.sdk.*
-
-```
-
-Currently Adview SDK mixed support proguard4.6 version or above, developers can go to the proguard official website http://sourceforge.net/ projects/proguard/ files/proguard/ to download 4.6 version or above. If you want to upgrade, just replace the downloaded version with “android-sdk- windowstoolsproguard”
-
-**12.2 Contact us**
-
-Users can login Adview, there are service E-mail, service contact number and enterprise QQ customer service at the bottom of the homepage
-
-![contact us](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VII.png)
-
-**12.3 How to use sample**
-
-**12.3.1 Upload sample project , method 1**
-
-Process 1                                                                                                                               
-
-![process1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VIII.png)
- 
-Process 2                                                                                                                               
-
-![process2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/IX.png) 
- 
-Process 3                                                                                                                               
-
-![process3](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/X.png)
-
-Select the sample category in the SDK package
-
-**12.3.2 upload sample project, method 2**
-
- Process 1                                                                                                                               
-
-![process 12.3.2-1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/XI.png)
-
- Process 2                                                                                                                               
-
-Select the sample directory in SDK package ,default target is 1.6;
-![process 12.3.2-2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/XII.png)
- 
+com.chance.report.Re
