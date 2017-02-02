@@ -60,7 +60,7 @@ Region optimization function means mobile phone displays the domestic configured
 
 
 ##Ⅱ.About AdViewSDK_Android-3.4.1**
-##Jeevan can change .
+
 1. Clone or download AdViewSDK_Android-3.4.1 package .In the AdViewSDK_Android-3.4.1 contanis some important files as AdViewDemo,libs,umeng_res and wiyun_res.
 
 **AdViewDemo**
