@@ -2,14 +2,14 @@
 
 
 ##** About AdViewSDK_Android-3.4.1
-#Jeevan can change .
+##Jeevan can change .
 1. Clone or download AdViewSDK_Android-3.4.1 package .In the AdViewSDK_Android-3.4.1 contanis some important files as AdViewDemo,libs,umeng_res and wiyun_res.
 
 **AdViewDemo**
-AdViewDemo folder for Android Demo Project.It has all types of advertisement sample code with explanation.
+folder for Android Demo Project.It has all types of advertisement sample code with explanation.
 
 **libs**
-libs folder ,it contains the SDK for all ad platforms. 
+folder ,it contains the SDK for all ad platforms. 
 (README.pdf has the ad platform instructions corresponding to each jar.)
 
 **umeng_res**
@@ -104,7 +104,6 @@ Some platform need to declare activity to work normal. Declaration is contained 
 <activity android:name="com.kuaiyou.video.vast.activity.VASTAdActivity" 
 android:hardwareAccelerated="true"
 android:screenOrientation="landscape"/>
-
 <activity android:name="com.kuaiyou.video.AdviewWebView"/>
 
 ```
