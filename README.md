@@ -684,8 +684,7 @@ AdView is dynamically call, it does not have to mix. Advertising agency code has
 ( The below code can be copied in the sample)
 
 ```
-#The below is used for AdView SDK settings,only instead
-for your app
+#The below is used for AdView SDK settings,only instead for your app
 -dontwarn
 # for google play service
 -libraryjars '/libs/android-support-v4.jar'
@@ -697,28 +696,26 @@ for your app
 -keep public class com.wooboo.** {*;}
 -keep public class cn.aduu.android.**{*;}
 -keep public class com.wqmobile.** {*;}
--keep class
-com.baidu.mobads.** { public
-protected *;
+-keep class com.baidu.mobads.** { public
+  protected *;
 }
 -keep public class
-com.google.android.gms.ads.** { public *;
-26
+  com.google.android.gms.ads.** { public *;
 }
 -keep public class
-com.google.ads.** { public *;
+  com.google.ads.** { public *;
 }
 -keep public class com.millennialmedia.android.* {
-<init>(...);
-public void
-*(...);
-public com.millennialmedia.android.MMJSResponse
-*(...);
+   <init>(...);
+       public void
+         *(...);
+   public com.millennialmedia.android.MMJSResponse *(...);
 }
 -keep class com.qq.e.**
-{ public protected
-*;
-}
+  { public protected
+  *;
+  }
+          
 -dontoptimize
 -dontwarn
 -keep class com.mobisage.android.** {*;}
@@ -731,8 +728,7 @@ public com.millennialmedia.android.MMJSResponse
 -keepattribute Deprecated
 -keepattributes *Annotation*
 #-dontwarn com.chance.**
-#-dontwarn com.android.volley.NetworkDispatcher -
-flattenpackagehierarchy com.chance.v4
+#-dontwarn com.android.volley.NetworkDispatcher -flattenpackagehierarchy com.chance.v4
 -keep class * extends
 com.chance.ads.Ad { public *;
 }
@@ -740,7 +736,6 @@ com.chance.ads.Ad { public *;
 com.chance.ads.AdActivity { public
 *;
 }
-27
 -keep class
 com.chance.recommend.RecommendActivity { public
 *;
@@ -760,8 +755,9 @@ com.chance.ads.OfferWallButton { public
 -keep class
 com.chance.ads.RecommendButton { public
 *;
+  
 AdView Android SDK brochure for developers
--keep class
+  -keep class
 com.chance.ads.OfferWallAdDetail { public
 *;
 }
@@ -777,7 +773,6 @@ com.chance.exception.PBException { public
 com.chance.listener.AdListener { public
 *;
 }
-28
 -keep class
 com.chance.listener.PointsChangeListener { public
 *;
@@ -798,4 +793,92 @@ com.chance.listener.GetAdListListener { public
 android.app.Service { public *;
 }
 -keep class
-com.chance.report.Re
+com.chance.report.ReportData { public
+*;
+}
+-keep class
+com.chance.engine.DownloadData { public
+*;
+}
+  }
+-keep class com.chance.recommend.** {*;}
+-keep class com.chukong.android.crypto.** {*;}
+-keep class com.chance.d.** {*;}
+#Touch mix ends
+-keep class com.suizong.mobile.** {*;}
+-keep class com.go2map.mapapi.** {*;}
+-keep public class cn.Immob.sdk.** {*;}
+-keep public class cn.Immob.sdk.controller.** {*;}
+-keep class net.youmi.android.** {*;}
+-keeppackagenames cn.smartmad.ads.android
+-keeppackagenames I
+-keep class cn.smartmad.ads.android.* {*;}
+-keep class I.* {*;}
+-keep public class MobWin.*
+-keep public class MobWin.cnst.*
+-keep class com.tencent.lbsapi.*
+-keep class com.tencent.lbsapi.core.*
+-keep class LBSAPIProtocol.*
+-keep class com.tencent.lbsapi.core.QLBSJNI {
+*;
+}
+-keeppackagenames com.adchina.android.ads
+-keeppackagenames com.adchina.android.ads.controllers
+-keeppackagenames com.adchina.android.ads.views
+-keeppackagenames com.adchina.android.ads.animations
+-keep class com.adchina.android.ads.*{*;}
+-keep class com.adchina.android.ads.controllers.*{*;}
+-keep class com.adchina.android.ads.views.*{*;}
+-keep class com.adchina.android.ads.animations.*{*;}
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontpreverify
+ 
+  -verbose
+-optimizations !code/simplification/arithmetic,!field/*,!class/ merging/*
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+-keep public class com.android.vending.licensing.ILicensingService
+-keepclasseswithmembers class
+   * { native <methods>;
+}
+-keepclasseswithmembers class * {
+public <init>(android.content.Context, android.util.AttributeSet);
+}
+-keepclasseswithmembers class * {
+   public <init>(android.content.Context, android.util.AttributeSet,
+   int);
+}
+-keepclassmembers enum *
+   { public static **[]
+   values();
+   public static ** valueOf(java.lang.String);
+}
+-keep class * implements android.os.Parcelable
+  { public static final android.os.Parcelable
+  $Creator *;
+}
+-keep class com.mediav.** {*;}
+-keep class org.adver.score.**{*;}
+-keep class
+   com.easou.ecom.mads.**
+   { public protected *;
+}
+                                 
+}
+-keep class com.imopan.plugin.spot.** {
+*; }
+-keep class com.jd.**{
+  *;
+}
+-keep class cn.pro.ad.sdk.*
+
+```
+
+ Currently Adview SDK mixed support proguard4.6 version or above, developers can go to the proguard official website http://sourceforge.net/ projects/proguard/files/proguard/ to download 4.6 version or above. If you want to upgrade, just replace the downloaded version with “android-sdk- windows\tools\proguard” 
