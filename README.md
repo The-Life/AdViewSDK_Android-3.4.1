@@ -175,7 +175,8 @@ Add the following code to your activity:
      AdViewBannerManager.getInstance(this).requestAd(this,key, this);
      
      // Gets the currently requested banner View,upload it to your own layout.
-     View view = AdViewBannerManager.getInstance(this).getAdViewLayout(this,key);layout.addView(view);
+     View view = AdViewBannerManager.getInstance(this).getAdViewLayout(this,key);
+     layout.addView(view);
              
 
 ```
@@ -238,9 +239,26 @@ Since interstitial ad has a certain life cycle, Please do not wait too long afte
 Add the following code to your activity:
 
 ```
+ //Basic Initialization
+ InitConfiguration initConfiguration = new InitConfiguration.Builder(this)
+                .setUpdateMode(InitConfiguration.UpdateMode.EVERYTIME)
+                .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
+                .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+                .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+                .setRunMode(InitConfiguration.RunMode.TEST)
+                .build(); 
+
+//Initialization for interstitual advertisement
+AdViewInstlManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
+
+		
 // interstitial ad request after initialization, ad request and display, used alone
-AdViewInstlManager.getInstance(this).requestAd(this,MainActivity.key2);
-// After ad request succeed , call the display ad AdViewInstlManager.getInstance(this).showAd(this,MainActivity.key2);
+AdViewInstlManager.getInstance(this).requestAd(this,MainActivity.SDK_KEY);
+
+// After ad request succeed , call the display ad
+AdViewInstlManager.getInstance(this).showAd(this,MainActivity.SDK_KEY);
+
+
 ```
 
 **6.2 Ad Interstitial Event Handling**
@@ -291,80 +309,106 @@ AdViewInstlManager.getInstance(this).reportClick(key);
 ```
 
 **Note:**
-You can refer to the code of AdInstlActivity in AdView Demo Project.
+You can refer to the code of AdInstlActivity in AdViewDemo Project.
 
 ##VII. Create opening screen ad
 
 **7.1 Create opening screen ad**
 
+Add the following code to your activity:
+
+
+
 ```
+ //Basic Initialization
+ InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
+                .setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
+                .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
+                .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+                .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+                .setRunMode(InitConfiguration.RunMode.TEST)
+                .build();
+
+//Intialization for Open Screen ad
+AdViewSpreadManager.getInstance(this).init(initConfiguration, new String[]{MainActivity.SDK_KEY});
+
+		
 // Set the logo at the bottom of opening screen (not required), you can also upload local images or images link.
 AdViewSpreadManager.getInstance(this).setSpreadLogo(R.drawable.spread_logo);
+
 // Set background color of opening screen( not required)
 AdViewSpreadManager.getInstance(this).setSpreadBackgroudColor( Color.WHITE);
+
 // Request opening screen ads
-AdViewSpreadManager.getInstance(this).request(this,MainActivity.key2, (RelativeLayout) findViewById(R.id.spreadlayout), this);
+AdViewSpreadManager.getInstance(this).request(this,MainActivity.SDK_KEY,(RelativeLayout) findViewById(R.id.spreadlayout), this);
 
 ```
 
 **7.2 Ad Opening screen Event Handling**
 
-To receive events from ad, you should implement an event listener interface AdViewSpreadListener.
+To receive events from ad, you should implement an event listener interface **AdViewSpreadListener**.
 
 ```
 public interface AdViewSpreadListener {
 /**
-* This function is called when the ad is displayed.
-*/
+ * This function is called when the ad is displayed.
+ */
 public void onAdDisplay(String key);
+
 /**
-* This function is called when the ad request
-succeeds.
-*/
+ * This function is called when the ad request
+ succeeds.
+ */
 public void onAdReceived(String key);
+
 /**
-* Click to callback .
-*/
+ * Click to callback .
+ */
 public void onAdClick(String key);
+
 /**
-* This function is called when the ad request
-failed.
-*/
+ * This function is called when the ad request
+ failed.
+ */
 public void onAdFailed(String key);
-16
+
 /**
-*This function is called when the ad is closed.
-*/
+ *This function is called when the ad is closed.
+ */
 public void onAdClose(String key);
+
 /**
-* Custom callback
-*/
-public void onAdNotifyCustomCallback(String
-key,ViewGroup view,int ruleTime,int delayTime);
+ * Custom callback
+ */
+public void onAdNotifyCustomCallback(String key,ViewGroup view,int ruleTime,int delayTime);
+
 }
+
 ```
 
 **7.3 Custom countdown notification style on the top of opening screen**
 
 ```
 // Skip button will appears on the top after settings
-AdViewSpreadManager.getInstance(this).setSpreadNotifyTyp
-e(this, AdSpreadManager.NOTIFY_COUNTER_NUM);
+AdViewSpreadManager.getInstance(this).setSpreadNotifyType(this, AdSpreadManager.NOTIFY_COUNTER_NUM);
+
 // Defaults, none notification will be displayed
 public final static int NOTIFY_COUNTER_NULL = 0;
+
 // Countdown will be shown after settings
 public final static int NOTIFY_COUNTER_NUM = 1;
-// Skip button will be shown on the top after settings,
-but it will appear only after specified times.
+
+// Skip button will be shown on the top after settings,but it will appear only after specified times.
 public final static int NOTIFY_COUNTER_TEXT = 2;
-// Will call this after settings:
-onAdNotifyCustomCallback(String key,ViewGroup view,intruleTime,int delayTime) interface, you can custom notification styles
+
+// Will call this after settings:onAdNotifyCustomCallback(String key,ViewGroup view,intruleTime,int delayTime) interface, you //can custom notification styles
 public final static int NOTIFY_COUNTER_CUSTOM = 3;
+
 ```
 
 **Note:**
 
-For opening advertising please make sure the exposure time is sufficient, otherwise it will affect the income. You can refer to the code of SpreadScreenActivity in AdView Demo Project.
+For opening advertising please make sure the exposure time is sufficient, otherwise it will affect the income. You can refer to the code of SpreadScreenActivity in AdViewDemo Project.
 
 ##VIII. Create native advertising 
 
@@ -374,9 +418,10 @@ Add a listview to layout file, e.g :
 
 ```
 <ListView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+   android:id="@+id/list"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent" />
+   
 ```
 
 Add the following code to your activity:
