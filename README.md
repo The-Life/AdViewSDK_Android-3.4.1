@@ -3,13 +3,14 @@
 1. Visit AdView website http://www.adview.com and register Adview Account.
 2. Login "My Products" page, select "Publish App”
 3. Select “Android” follow the prompts to complete the relevant information About the application and you will get the sole unique SDK key
-4. Click “APP management” page→Configure : enter adID in“Not set”, turn on the switch, set the capacity to 100%, click “Save”. If you need more platform please turn on the switch, click “Add ad platform” and configure those respected ids. The cumulative percentage must be 100%.you can use AdView Auction Ads. Generally recommended number of platforms is 1-3.
-5. When open bidding or remnant, if you need to pop-up confirmation box twice when click the ad, you can set it as:
- *click “edit”; 
- *switch on “confirm tips” . Ignore it if you don’t need this process.
-
-
+4. Click “APP management” page→Configure : enter adID in“Not set”, turn on the switch, set the capacity to 100%, click “Save”. If you need more platform please turn on the switch, click “Add ad platform” and configure those respected ids. The cumulative percentage must be 100%.you can use AdView Auction Ads. Generally recommended number of platforms is 1-3.                     
 ![Home page](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
+5. When open bidding or remnant, if you need to pop-up confirmation box twice when click the ad, you can set it as:           
+ -click “edit”;                                                                                                               
+ -switch on “confirm tips” . Ignore it if you don’t need this process.                                                         
+
+
+
 
 
 ![Bidding](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.1.png)
