@@ -158,35 +158,35 @@ Add the following code to your activity:
 
 
 ```
-        //Basic Initialization
-        InitConfiguration initConfiguration = new InitConfiguration.Builder(
-                this).setUpdateMode(InitConfiguration.UpdateMode.EVERYTIME)
-                .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
-                .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
-				.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
-				.setRunMode(InitConfiguration.RunMode.TEST)
-                .build();
+ //Basic Initialization
+ InitConfiguration initConfiguration = new InitConfiguration.Builder(this)
+           .setUpdateMode(InitConfiguration.UpdateMode.EVERYTIME)
+           .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
+           .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+           .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+           .setRunMode(InitConfiguration.RunMode.TEST)
+           .build(); 
                 
-      //Initialization for Banner
-      AdViewBannerManager.getInstance(this).init(initConfiguration,
-                new String[]{MainActivity.SDK_KEY});      
+ //Initialization for Banner
+ AdViewBannerManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});      
                 
-      // request banner ads after initialization
-     AdViewBannerManager.getInstance(this).requestAd(this,key, this);
-     
-     // Gets the currently requested banner View,upload it to your own layout.
-     View view = AdViewBannerManager.getInstance(this).getAdViewLayout(this,key);
-     layout.addView(view);
+ // request banner ads after initialization
+ AdViewBannerManager.getInstance(this).requestAd(this,key, this);
+      
+ // Gets the currently requested banner View,upload it to your own layout.
+ View view = AdViewBannerManager.getInstance(this).getAdViewLayout(this,key);
+ layout.addView(view);
              
 
 ```
 
 ##5.2 Ad Banner events handling
 
-To receive events from ad, you should implement an event listener interface AdViewBannerListener.
+To receive events from ad, you should implement an event listener interface **AdViewBannerListener**.
 
 ```
 public interface AdViewBannerListener{
+
 /**
  * Use this function when the ad is clicked
  */
@@ -263,7 +263,7 @@ AdViewInstlManager.getInstance(this).showAd(this,MainActivity.SDK_KEY);
 
 **6.2 Ad Interstitial Event Handling**
 
-To receive events from ad, you should implement an event listener interface AdViewInstlListener.
+To receive events from ad, you should implement an event listener interface **AdViewInstlListener** .
 
 ```
 public interface AdViewInstlListener {
@@ -317,11 +317,9 @@ You can refer to the code of AdInstlActivity in AdViewDemo Project.
 
 Add the following code to your activity:
 
-
-
 ```
- //Basic Initialization
- InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
+//Basic Initialization
+InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
                 .setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
                 .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
                 .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
@@ -427,20 +425,39 @@ Add a listview to layout file, e.g :
 Add the following code to your activity:
 
 ```
+//Basic Initialization
+InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
+                .setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
+                .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
+                .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+                .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+                .setRunMode(InitConfiguration.RunMode.TEST)
+                .build();
+
+//Intialization for Native advertisement
+AdViewNativeManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
+
+
 //Initialized native ads should custom ad layout in advance, and apply native ad ID at app background
-AdViewNativeManager.getInstance(this).requestAd(this,MainActivity.key2, 2,this); 
+AdViewNativeManager.getInstance(this).requestAd(this,MainActivity.SDK_KEY, 2,this); 
+
 //set native callback interface
 @Override
 public void onReceivedAd(String key,List arg0) {
-for (int i = 0; i < arg0.size(); i++) { Data data = newData();
+for (int i = 0; i < arg0.size(); i++) { 
+Data data = newData();
 NativeAdInfo nativeAdInfo = (NativeAdInfo) arg0.get(i);
-data.descript = nativeAdInfo.getDescription(); data.icon = nativeAdInfo.getIconUrl();
+data.descript = nativeAdInfo.getDescription(); 
+data.icon = nativeAdInfo.getIconUrl();
 data.title = ((NativeAdInfo) arg0.get(i)).getTitle();
 data.adInfo = (NativeAdInfo) arg0.get(i);
-((NativeAdInfo) arg0.get(i)).getIconHeight(); data.isAd = true;
+((NativeAdInfo) arg0.get(i)).getIconHeight();
+data.isAd = true;
 Log.i("native information ", "data.descript: " + data.descript + "\ndata.icon: " + data.icon + "\ndata.title:" + data.title); list.add(3, data);
 ((NativeAdInfo) arg0.get(i)).onDisplay(newView( AdNativeActivity.this));
-} }
+} 
+}
+
 /**
 * This function is called when the ad requests failed.
 */
@@ -455,28 +472,29 @@ the status of current downloading contents.
 public void onAdStatusChanged (int arg0) {
 }
 });
+
 ```
 
 **8.2 Ad Native Event Handling**
-To receive events from ad, you should implement an event listener interface AdViewNativeListener.
+To receive events from ad, you should implement an event listener interface **AdViewNativeListener** .
 
 ```
 public interface AdViewNativeListener {
+
 /**
-* This function is called when the ad request
-succeed.
-*/
-public void onAdReceived(String
-key ,List<NativeAdInfo> adMaps);
+ * This function is called when the ad request succeed.
+ */
+ public void onAdReceived(String key ,List<NativeAdInfo> adMaps);
+ 
 /**
-* This function is called when ad request failed.
-*/
-public void onAdReceived(String key);
+ * This function is called when ad request failed.
+ */
+ public void onAdReceived(String key);
+ 
 /**
-* When the ad status changed.
-*/
-public void onAdStatusChanged (String key ,int
-status);
+ * When the ad status changed.
+ */
+public void onAdStatusChanged (String key ,int status);
 
 ```
 
@@ -486,42 +504,59 @@ status);
 Add the following code in activity,
 
 ```
-//Request video ads after initialization. Request and
-display ads should be used separately.
-AdViewVideoManager.getInstance(this).requestAd(this,Main
-Activity.key3,this);
+//Basic Initialization
+InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
+                .setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
+                .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
+                .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+                .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+                .setRunMode(InitConfiguration.RunMode.TEST)
+                .build();
+
+//Initialization For Video ads
+AdViewVideoManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
+
+//Request video ads after initialization. Request and display ads should be used separately.
+AdViewVideoManager.getInstance(this).requestAd(this,MainActivity.SDK_KEY,this);
+
 //set video callback interface
 // Call display ad after ad request succeed.
-AdViewVideoManager.getInstance(this).playVideo(this,MainActivity.key3);
+AdViewVideoManager.getInstance(this).playVideo(this,MainActivity.SDK_KEY);
+
 ```
 
 **9.2 Ad Video Event Handling**
 
-To receive events from ad, you should implement an event listener interface AdViewVideoListener.
+To receive events from ad, you should implement an event listener interface **AdViewVideoListener** .
 
 ```
 public interface AdViewVideoListener{
 /**
-* Play start event notification
-*/
+ * Play start event notification
+ */
 public void onAdPlayStart(String key);
-/**
-* Play end event notification
-*/
-public void onAdPlayEnd(String key, Boolean isEnd);
-/**
-* Close event notification
-*/
-public void onAdClose(String key);
-/**
-* Request succeed notification
-*/
 
-public void onAdReceived(String key);
 /**
-* Request failed notification
-*/
-public void onAdFailed (String key); }
+ * Play end event notification
+ */
+public void onAdPlayEnd(String key, Boolean isEnd);
+
+/**
+ * Close event notification
+ */
+public void onAdClose(String key);
+
+/**
+ * Request succeed notification
+ */
+public void onAdReceived(String key);
+
+/**
+ * Request failed notification
+ */
+public void onAdFailed (String key);
+}
+
 ```
 
 **Note:**
