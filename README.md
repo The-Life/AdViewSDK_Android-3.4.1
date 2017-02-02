@@ -22,10 +22,13 @@
 1. We provide you with SDK that gives you the freedom to choose your favourite advertising agency. Apart from the bidding and remnant ,other ad platforms are third- party. The App key needed should be register and apply from corresponding official website, and then configure them to the corresponding platform at Adview background.
 2. If you are fresher, you don’t know much about ad platform, which ad platform to choose or which ad platform revenue is stable, we suggest you use bidding first.
 3. Bidding and remnant ads need to complement market information at background, and you will not get formal ads until pass reviewed. Before that all are test ads which do not charge.
-4. **Switch** Only those ads of which platform is switched on will display in the APP.
-5. **Capacity** Only capacity of which is switched on will be valid. For the request priority of various platform, usually those of high proportion will get the prior request. Switch platform and at the same time adjust ad capacity. For all ads with the status ON, the capacity should be 100, otherwise they cannot be saved correctly.
+4. **Switch**
+Only those ads of which platform is switched on will display in the APP.
+5. **Capacity** 
+Only capacity of which is switched on will be valid. For the request priority of various platform, usually those of high proportion will get the prior request. Switch platform and at the same time adjust ad capacity. For all ads with the status ON, the capacity should be 100, otherwise they cannot be saved correctly.
 6. For Banner ad, full screen/interstitial , opening screen ,etc, there’s a save button at the bottom of the page. You should click the save button every time you modify a ad format, otherwise the modification is invalid .
-7. **Region optimization:** Region optimization function means mobile phone displays the domestic configured ads when it’s in domestic, while in foreign country it display foreign configured ads to meet the different demands to the maximum extent. When the region optimization function closed, it does not distinguish between home and abroad.
+7. **Region optimization:** 
+Region optimization function means mobile phone displays the domestic configured ads when it’s in domestic, while in foreign country it display foreign configured ads to meet the different demands to the maximum extent. When the region optimization function closed, it does not distinguish between home and abroad.
 
 ##Ⅱ. Add SDK
 
