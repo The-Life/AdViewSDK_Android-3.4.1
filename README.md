@@ -1,7 +1,19 @@
 #Dev Guide Book @Adview
 
-
-[About AdView](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#about-adviewsdk_android-341)
+##**Contents**
+[I. Register and configure SDK-KEY](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#i-register-and-configure-sdk-key)
+[II.About AdViewSDK_Android-3.4.1](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#about-adviewsdk_android-341)
+[III. Add SDK]
+[IV. AndroidManifest.xml text configuration]
+[V. Acquire ad configurations]
+[VI. Create banner advertising]
+[VII. Create interstitial advertising]
+[VIII. Create opening screen ad]
+[IX. Create native advertising ]
+[X. Create video advertising]
+[XI. Add custom ad platform]
+[XII. Appointed app channel]
+[XIII. Frequently Asked Questions]
 
 
 
@@ -37,7 +49,7 @@ Only capacity of which is switched on will be valid. For the request priority of
 Region optimization function means mobile phone displays the domestic configured ads when it’s in domestic, while in foreign country it display foreign configured ads to meet the different demands to the maximum extent. When the region optimization function closed, it does not distinguish between home and abroad.
 
 
-##About AdViewSDK_Android-3.4.1**
+##Ⅱ.About AdViewSDK_Android-3.4.1**
 ##Jeevan can change .
 1. Clone or download AdViewSDK_Android-3.4.1 package .In the AdViewSDK_Android-3.4.1 contanis some important files as AdViewDemo,libs,umeng_res and wiyun_res.
 
@@ -55,7 +67,7 @@ To integrate Umeng SDK, you need to put the files of umeng_res given in the demo
 To integrate Wiyun SDK, you need to put the files of wiyun_res given in the demo to application res , and add corresponding permissions .
 
 
-##Ⅱ. Add SDK
+##III. Add SDK
 
 1. Clone or download AdViewSDK_Android-3.4.1 package here.In the AdViewSDK_Android-3.4.1 folder contains libs folder ,it contains the SDK for all ad platforms. (README.pdf has the ad platform instructions corresponding to each jar.)
 2. Please put AdViewSDK_Android.jar, android-support-v4.jar into your application.
@@ -68,9 +80,9 @@ To integrate Wiyun SDK, you need to put the files of wiyun_res given in the demo
 1. To integrate Umeng SDK, you need to put the files of umeng_res given in the demo to application res , and add corresponding permissions .
 2. To integrate Wiyun SDK, you need to put the files of wiyun_res given in the demo to application res , and add corresponding permissions .
 
-##III. AndroidManifest.xml text configuration
+##IV. AndroidManifest.xml text configuration
 
-**3.1 Add permission code**
+**4.1 Add permission code**
 
 Required permissions should be added ( complete code please refer to AndroidManifest file in Demo.
 
@@ -94,7 +106,7 @@ Required permissions should be added ( complete code please refer to AndroidMani
 -**READ_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device                                                           
 
 
-**3.2 Add Activity declaration**
+**4.2 Add Activity declaration**
 
 Some platform need to declare activity to work normal. Declaration is contained in application label, more details please refer to AndroidManifest in Demo. 
 
@@ -112,7 +124,7 @@ android:screenOrientation="landscape"/>
 
 ```
 
-##IV. Acquire ad configurations
+##V. Acquire ad configurations
 
 **Note:**
 
@@ -144,9 +156,9 @@ AdViewNativeManager.getInstance(this).init(initConfig,MainActivity.keySet);
 AdViewSpreadManager.getInstance(this).init(initConfig,MainActivity.keySet);
 ```
 
-##V. Create banner advertising
+##VI. Create banner advertising
 
-**5.1 Add ads through adding code**
+**6.1 Add ads through adding code**
 
 Add a banner code to layout file,
 
@@ -184,7 +196,7 @@ Add the following code to your activity:
 
 ```
 
-##5.2 Ad Banner events handling
+##6.2 Ad Banner events handling
 
 To receive events from ad, you should implement an event listener interface **AdViewBannerListener**.
 
@@ -232,9 +244,9 @@ If you want banner advertisement directly from ad networks use this below config
 ![Add types of ads](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/V.png)
 
 
-##VI. Create interstitial advertising
+##VII. Create interstitial advertising
 
-**6.1 create interstitial**
+**7.1 create interstitial**
 
 **Note:**
 
@@ -265,7 +277,7 @@ AdViewInstlManager.getInstance(this).showAd(this,MainActivity.SDK_KEY);
 
 ```
 
-**6.2 Ad Interstitial Event Handling**
+**7.2 Ad Interstitial Event Handling**
 
 To receive events from ad, you should implement an event listener interface **AdViewInstlListener** .
 
@@ -300,7 +312,7 @@ public void onAdFailed (String key);
 
 ```
 
-**6.3 Create custom style interstitial**
+**7.3 Create custom style interstitial**
 
 ```
 // You need to set the user-managed mode when initialization, and you must manually call the display
@@ -325,9 +337,9 @@ AdViewInstlManager.getInstance(this).reportClick(key);
 **Note:**
 You can refer to the code of AdInstlActivity in AdViewDemo Project.
 
-##VII. Create opening screen ad
+##VIII. Create opening screen ad
 
-**7.1 Create opening screen ad**
+**8.1 Create opening screen ad**
 
 Add the following code to your activity:
 
@@ -356,7 +368,7 @@ AdViewSpreadManager.getInstance(this).request(this,MainActivity.SDK_KEY,(Relativ
 
 ```
 
-**7.2 Ad Opening screen Event Handling**
+**8.2 Ad Opening screen Event Handling**
 
 To receive events from ad, you should implement an event listener interface **AdViewSpreadListener**.
 
@@ -396,7 +408,7 @@ public void onAdNotifyCustomCallback(String key,ViewGroup view,int ruleTime,int 
 
 ```
 
-**7.3 Custom countdown notification style on the top of opening screen**
+**8.3 Custom countdown notification style on the top of opening screen**
 
 ```
 // Skip button will appears on the top after settings
@@ -420,9 +432,9 @@ public final static int NOTIFY_COUNTER_CUSTOM = 3;
 
 For opening advertising please make sure the exposure time is sufficient, otherwise it will affect the income. You can refer to the code of SpreadScreenActivity in AdViewDemo Project.
 
-##VIII. Create native advertising 
+##IX. Create native advertising 
 
-**8.1 create native advertising**
+**9.1 create native advertising**
 
 Add a listview to layout file, e.g :
 
@@ -487,7 +499,7 @@ public void onAdStatusChanged (int arg0) {
 
 ```
 
-**8.2 Ad Native Event Handling**
+**9.2 Ad Native Event Handling**
 To receive events from ad, you should implement an event listener interface **AdViewNativeListener** .
 
 ```
@@ -510,8 +522,8 @@ public void onAdStatusChanged (String key ,int status);
 
 ```
 
-##IX. Create video advertising
-**9.1 create video advertising**
+##X. Create video advertising
+**10.1 create video advertising**
 
 Add the following code in activity,
 
@@ -537,7 +549,7 @@ AdViewVideoManager.getInstance(this).playVideo(this,MainActivity.SDK_KEY);
 
 ```
 
-**9.2 Ad Video Event Handling**
+**10.2 Ad Video Event Handling**
 
 To receive events from ad, you should implement an event listener interface **AdViewVideoListener** .
 
@@ -575,7 +587,7 @@ public void onAdFailed (String key);
 
 You can refer to the code of AdVideoActivity in AdView Demo Project.
 
-##X. Add custom ad platform
+##XI. Add custom ad platform
 
 Sometimes developers would like to add a platform which is not aggregated, Adview provide ways to meet this demand.
 
@@ -585,9 +597,9 @@ There’s a “Custom ad platform” in add ad platform . Developer needs to fil
 ![custom ad platform](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VI.png)
  
 
- **10.1 The example that referred code Demo provide is the implementation of Amazon ad; **                                               
+ **11.1 The example that referred code Demo provide is the implementation of Amazon ad; **                                               
 
- **10.2 Custom function implementation **                                                                                                 
+ **11.2 Custom function implementation **                                                                                                 
 
 ```
 // you can visit https://developer.amazon.com/sdk/mobileads.html
@@ -639,7 +651,7 @@ adView.loadAd(adOptions);
 
 ```
 
-##XI. Appointed app channel
+##XII. Appointed app channel
 Developers add the above content in the Mainfest files:
 ```
 <meta-data android:name="AdView_CHANNEL" android:value=“GFAN">
@@ -680,9 +692,9 @@ Currently the channels that Adview support are as follow:
 
 If there’s no configuration or configure other value, all seemed as “OTHER”; There are links to various markets in Mobile Ads (http://t.adview.cn/);
 
-##XII. Frequently Asked Questions
+##XIII. Frequently Asked Questions
 
-**12.1 What if an application wants to mix (ProGuard)?**
+**13.1 What if an application wants to mix (ProGuard)?**
 
 AdView is dynamically call, it does not have to mix. Advertising agency code has been independently mixed, if you need to mixed your own code, you can add the following content at the beginning of the file proguard.cfg. More details please refer to the code in sample. 
 ( The below code can be copied in the sample)
@@ -887,7 +899,7 @@ public <init>(android.content.Context, android.util.AttributeSet);
 
  Currently Adview SDK mixed support proguard4.6 version or above, developers can go to the proguard official website http://sourceforge.net/ projects/proguard/files/proguard/ to download 4.6 version or above. If you want to upgrade, just replace the downloaded version with “android-sdk- windows\tools\proguard” 
 
-**12.2 Contact us** 
+**13.2 Contact us** 
 
 Users can login Adview, there are service E-mail, service contact number and enterprise QQ customer service at the bottom of the homepage 
 
