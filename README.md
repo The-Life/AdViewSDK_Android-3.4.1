@@ -1,4 +1,25 @@
 #Dev Guide Book @Adview
+
+
+##** About AdViewSDK_Android-3.4.1
+#Jeevan can change .
+1. Clone or download AdViewSDK_Android-3.4.1 package .In the AdViewSDK_Android-3.4.1 contanis some important files as AdViewDemo,libs,umeng_res and wiyun_res.
+**AdViewDemo**
+AdViewDemo folder for Android Demo Project.It has all types of advertisement sample code with explanation.
+**libs**
+libs folder ,it contains the SDK for all ad platforms. 
+(README.pdf has the ad platform instructions corresponding to each jar.)
+**umeng_res**
+To integrate Umeng SDK, you need to put the files of umeng_res given in the demo to application res , and add corresponding permissions .
+**wiyun_res**
+To integrate Wiyun SDK, you need to put the files of wiyun_res given in the demo to application res , and add corresponding permissions .
+
+
+
+
+
+#Jeevan write explanation here 
+
 ##**I. Register and configure SDK-KEY**
 1. Visit AdView website http://www.adview.com and register Adview Account.
 2. Login "My Products" page, select "Publish App”
@@ -32,7 +53,7 @@ Region optimization function means mobile phone displays the domestic configured
 
 ##Ⅱ. Add SDK
 
-1. Get Adview SDK package from the website and unzip it. The libs folder contains the SDK for all ad platforms. (README.pdf has the ad platform instructions corresponding to each jar.)
+1. Clone or download AdViewSDK_Android-3.4.1 package here.In the AdViewSDK_Android-3.4.1 folder contains libs folder ,it contains the SDK for all ad platforms. (README.pdf has the ad platform instructions corresponding to each jar.)
 2. Please put AdViewSDK_Android.jar, android-support-v4.jar into your application.
 3. Add other ad platform SDK that App may use in the same way. ( Can only use the jar provided by Adview. Use jar from other channels will make the ad cannot display.
 
@@ -40,7 +61,7 @@ Region optimization function means mobile phone displays the domestic configured
  
 **Note :**
 
-1. To integrate Umeng SDK, you need to put the files of umeng_res given in the demo to application res .
+1. To integrate Umeng SDK, you need to put the files of umeng_res given in the demo to application res , and add corresponding permissions .
 2. To integrate Wiyun SDK, you need to put the files of wiyun_res given in the demo to application res , and add corresponding permissions .
 
 ##III. AndroidManifest.xml text configuration
