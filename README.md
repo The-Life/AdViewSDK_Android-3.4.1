@@ -294,33 +294,33 @@ AdViewInstlManager.getInstance(this).showAd(this,MainActivity.SDK_KEY);
 To receive events from ad, you should implement an event listener interface **AdViewInstlListener** .
 
 ```
-public interface AdViewInstlListener {
-/**
- * Use this function when the ad is clicked
- */
-public void onAdClick(String key);
+    public interface AdViewInstlListener {
+        /**
+         * Use this function when the ad is clicked
+         */
+        public void onAdClick(String key);
 
-/**
- * Use this function when the ad is displayed
- */
-public void onAdDisplay(String key);
+        /**
+         * Use this function when the ad is displayed
+         */
+        public void onAdDisplay(String key);
 
-/**
- * Use this function when the ad is disappeared
- */
-public void onAdDismiss(String key);
+        /**
+         * Use this function when the ad is disappeared
+         */
+        public void onAdDismiss(String key);
 
-/**
- * Use this function when the ad is successfully received
- */
-public void onAdReceived(String key);
+        /**
+         * Use this function when the ad is successfully received
+         */
+        public void onAdReceived(String key);
 
-/**
- * Use this function when the ad is failed
- */
-public void onAdFailed (String key);
+        /**
+         * Use this function when the ad is failed
+         */
+        public void onAdFailed (String key);
 
-}
+    }
 
 ```
 
@@ -385,38 +385,39 @@ AdViewSpreadManager.getInstance(this).request(this,MainActivity.SDK_KEY,(Relativ
 To receive events from ad, you should implement an event listener interface **AdViewSpreadListener**.
 
 ```
-public interface AdViewSpreadListener {
-/**
- * This function is called when the ad is displayed.
- */
-public void onAdDisplay(String key);
+    public interface AdViewSpreadListener {
+        /**
+         * This function is called when the ad is displayed.
+         */
+        public void onAdDisplay(String key);
 
-/**
- * This function is called when the ad requestsucceeds.
- */
-public void onAdReceived(String key);
+        /**
+         * This function is called when the ad requestsucceeds.
+         */
+        public void onAdReceived(String key);
 
-/**
- * Click to callback .
- */
-public void onAdClick(String key);
+        /**
+         * Click to callback .
+         */
+        public void onAdClick(String key);
 
-/**
- * This function is called when the ad request failed.
- */
-public void onAdFailed(String key);
+        /**
+         * This function is called when the ad request failed.
+         */
+        public void onAdFailed(String key);
 
-/**
- *This function is called when the ad is closed.
- */
-public void onAdClose(String key);
+        /**
+         *This function is called when the ad is closed.
+         */
+        public void onAdClose(String key);
 
-/**
- * Custom callback
- */
-public void onAdNotifyCustomCallback(String key,ViewGroup view,int ruleTime,int delayTime);
+        /**
+         * Custom callback
+         */
+        public void onAdNotifyCustomCallback(String key,ViewGroup view,int ruleTime,int delayTime);
 
-}
+    }
+
 
 ```
 
@@ -515,22 +516,24 @@ public void onAdStatusChanged (int arg0) {
 To receive events from ad, you should implement an event listener interface **AdViewNativeListener** .
 
 ```
-public interface AdViewNativeListener {
+    public interface AdViewNativeListener {
 
-/**
- * This function is called when the ad request succeed.
- */
- public void onAdReceived(String key ,List<NativeAdInfo> adMaps);
- 
-/**
- * This function is called when ad request failed.
- */
- public void onAdReceived(String key);
- 
-/**
- * When the ad status changed.
- */
-public void onAdStatusChanged (String key ,int status);
+        /**
+         * This function is called when the ad request succeed.
+         */
+        public void onAdReceived(String key, List<NativeAdInfo> adMaps);
+
+        /**
+         * This function is called when ad request failed.
+         */
+        public void onAdReceived(String key);
+
+        /**
+         * When the ad status changed.
+         */
+        public void onAdStatusChanged(String key, int status);
+
+    }
 
 ```
 
@@ -566,32 +569,35 @@ AdViewVideoManager.getInstance(this).playVideo(this,MainActivity.SDK_KEY);
 To receive events from ad, you should implement an event listener interface **AdViewVideoListener** .
 
 ```
-public interface AdViewVideoListener{
-/**
- * Play start event notification
- */
-public void onAdPlayStart(String key);
+    public interface AdViewVideoListener{
+        
+        /**
+         * Play start event notification
+         */
+        public void onAdPlayStart(String key);
 
-/**
- * Play end event notification
- */
-public void onAdPlayEnd(String key, Boolean isEnd);
+        /**
+         * Play end event notification
+         */
+        public void onAdPlayEnd(String key, Boolean isEnd);
 
-/**
- * Close event notification
- */
-public void onAdClose(String key);
+        /**
+         * Close event notification
+         */
+        public void onAdClose(String key);
 
-/**
- * Request succeed notification
- */
-public void onAdReceived(String key);
+        /**
+         * Request succeed notification
+         */
+        public void onAdReceived(String key);
 
-/**
- * Request failed notification
- */
-public void onAdFailed (String key);
-}
+        /**
+         * Request failed notification
+         */
+        public void onAdFailed (String key);
+        
+    }
+
 
 ```
 
