@@ -1,6 +1,6 @@
 #Dev Guide Book @Adview
 
-##**Contents**
+##Contents
 [I. Register and configure SDK-KEY](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#i-register-and-configure-sdk-key)
 
 [II.About AdViewSDK_Android-3.4.1](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#Ⅱabout-adviewsdk_android-341)
@@ -29,7 +29,7 @@
 
 
 
-##**I. Register and configure SDK-KEY**
+##I. Register and configure SDK-KEY
 1. Visit AdView website http://www.adview.com and register Adview Account.
 2. Login "My Products" page, select "Publish App”
 3. Select “Android” follow the prompts to complete the relevant information About the application and you will get the sole unique SDK key
@@ -38,9 +38,6 @@
 5. When open bidding or remnant, if you need to pop-up confirmation box twice when click the ad, you can set it as:           
  -click “edit”;                                                                                                               
  -switch on “confirm tips” . Ignore it if you don’t need this process.                                                         
-
-
-
 
 
 ![Bidding](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.1.png)
@@ -61,7 +58,7 @@ Only capacity of which is switched on will be valid. For the request priority of
 Region optimization function means mobile phone displays the domestic configured ads when it’s in domestic, while in foreign country it display foreign configured ads to meet the different demands to the maximum extent. When the region optimization function closed, it does not distinguish between home and abroad.
 
 
-##Ⅱ.About AdViewSDK_Android-3.4.1**
+##Ⅱ.About AdViewSDK_Android-3.4.1
 
 1. Clone or download AdViewSDK_Android-3.4.1 package .In the AdViewSDK_Android-3.4.1 contanis some important files as AdViewDemo,libs,umeng_res and wiyun_res.
 
@@ -99,12 +96,12 @@ To integrate Wiyun SDK, you need to put the files of wiyun_res given in the demo
 Required permissions should be added ( complete code please refer to AndroidManifest file in Demo.
 
 ```
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-permissionandroid:name="android.permission.ACCESS_COARSE_LOCATION"/>
-<uses-permissionandroid:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permissionandroid:name="android.permission.ACCESS_WIFI_STATE" />
-<uses-permissionandroid:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-<uses-permissionandroid:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permissionandroid:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permissionandroid:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permissionandroid:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permissionandroid:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permissionandroid:name="android.permission.READ_EXTERNAL_STORAGE"/>
 ```
 
 **Note:**
@@ -125,14 +122,14 @@ Some platform need to declare activity to work normal. Declaration is contained 
 **Configurations that adview bidding ads should add:**
 
 ```
-<service android:name="com.kyview.DownloadService" />
-<activity android:name="com.kyview.AdviewWebView" />
-<activity android:name="com.kyview.AdActivity" />
-<!-- Adiview bidding video -->
-<activity android:name="com.kuaiyou.video.vast.activity.VASTAdActivity" 
-android:hardwareAccelerated="true"
-android:screenOrientation="landscape"/>
-<activity android:name="com.kuaiyou.video.AdviewWebView"/>
+	<service android:name="com.kyview.DownloadService" />
+	<activity android:name="com.kyview.AdviewWebView" />
+	<activity android:name="com.kyview.AdActivity" />
+	<!-- Adiview bidding video -->
+	<activity android:name="com.kuaiyou.video.vast.activity.VASTAdActivity" 
+	android:hardwareAccelerated="true"
+	android:screenOrientation="landscape"/>
+	<activity android:name="com.kuaiyou.video.AdviewWebView"/>
 
 ```
 
@@ -145,27 +142,28 @@ android:screenOrientation="landscape"/>
 3. From 3.2.4 version, SDK supports setting up multiple ad slots (SDK-KEY) in one application. Take 3 ad slots of demo keyset for example, some APP would like to set different ad slots in multiple Activities, thus to statistic the user visit amount of each Activity based on the amount of ad display. If one ad slot can meet the demand of APP, then there’s no need to apply multiple ad slots.
 
 ```
-// Be sure to initialize before requesting ads, otherwise the ads cannot be used
-// set ad request configured parameter,
-//you can use default configuration : InitConfiguration. createDefault(this);
-InitConfiguration initConfig = new
-InitConfiguration.Builder(this)
-//real-time access to configuration, not required 
-.setUpdateMode(UpdateMode.EVERYTIME)
-// banner switcher can be closed
-.setBannerCloseble(BannerSwitcher.CANCLOSED)
-//interstitial switcher can be closed
-.setInstlCloseble(InstlSwitcher.CANCLOSE ) ''
-// more log under test mode, after the app launch please delete
-.setRunMode(RunMode.TEST)
-// Default situation. After setting, html5 and not-html5 ads can be received,
-while Html5Switcher.SUPPORT can only receive html5 ad .setHtml5Switcher(Html5Switcher.NONSUPPORT)
-// default situation, set interstitial to display mode, popupwindow mode can be set outside the form clickable. setInstlDisplayMode (InstlDisplayMode. DIALOG_MODE) .build();
-// respectively request banner, interstitial, native, opening screen ad configuration, keyset can be one or more key.
-AdViewBannerManager.getInstance(this).init(initConfig,MainActivity.keySet);
-AdViewInstlManager.getInstance(this).init(initConfig,MainActivity.keySet);
-AdViewNativeManager.getInstance(this).init(initConfig,MainActivity.keySet);
-AdViewSpreadManager.getInstance(this).init(initConfig,MainActivity.keySet);
+	// Be sure to initialize before requesting ads, otherwise the ads cannot be used
+	// set ad request configured parameter,
+	//you can use default configuration : InitConfiguration. createDefault(this);
+	InitConfiguration initConfig = new
+	InitConfiguration.Builder(this)
+	//real-time access to configuration, not required 
+	.setUpdateMode(UpdateMode.EVERYTIME)
+	// banner switcher can be closed
+	.setBannerCloseble(BannerSwitcher.CANCLOSED)
+	//interstitial switcher can be closed
+	.setInstlCloseble(InstlSwitcher.CANCLOSE ) ''
+	// more log under test mode, after the app launch please delete
+	.setRunMode(RunMode.TEST)
+	// Default situation. After setting, html5 and not-html5 ads can be received,
+	while Html5Switcher.SUPPORT can only receive html5 ad .setHtml5Switcher(Html5Switcher.NONSUPPORT)
+	// default situation, set interstitial to display mode, popupwindow mode can be set outside the form clickable. 	   
+	setInstlDisplayMode (InstlDisplayMode. DIALOG_MODE) .build();
+	// respectively request banner, interstitial, native, opening screen ad configuration, keyset can be one or more key.
+	AdViewBannerManager.getInstance(this).init(initConfig,MainActivity.keySet);
+	AdViewInstlManager.getInstance(this).init(initConfig,MainActivity.keySet);
+	AdViewNativeManager.getInstance(this).init(initConfig,MainActivity.keySet);
+	AdViewSpreadManager.getInstance(this).init(initConfig,MainActivity.keySet);
 ```
 
 ##VI. Create banner advertising
@@ -175,40 +173,40 @@ AdViewSpreadManager.getInstance(this).init(initConfig,MainActivity.keySet);
 Add a banner code to layout file,
 
 ```
-<FrameLayout
-      android:id="@+id/ad_view"
-      android:layout_width="match_parent"
-      android:layout_height="150dp"
-      android:gravity="center_horizontal" />
+	<FrameLayout
+	      android:id="@+id/ad_view"
+	      android:layout_width="match_parent"
+	      android:layout_height="150dp"
+	      android:gravity="center_horizontal" />
 ```
 
 Add the following code to your activity:
 
 
 ```
- //Basic Initialization
- InitConfiguration initConfiguration = new InitConfiguration.Builder(this)
-           .setUpdateMode(InitConfiguration.UpdateMode.EVERYTIME)
-           .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
-           .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
-           .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
-           .setRunMode(InitConfiguration.RunMode.TEST)
-           .build(); 
-                
- //Initialization for Banner
- AdViewBannerManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});      
-                
- // request banner ads after initialization
- AdViewBannerManager.getInstance(this).requestAd(this,key, this);
-      
- // Gets the currently requested banner View,upload it to your own layout.
- View view = AdViewBannerManager.getInstance(this).getAdViewLayout(this,key);
- layout.addView(view);
-             
+	 //Basic Initialization
+	 InitConfiguration initConfiguration = new InitConfiguration.Builder(this)
+		   .setUpdateMode(InitConfiguration.UpdateMode.EVERYTIME)
+		   .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
+		   .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+		   .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+		   .setRunMode(InitConfiguration.RunMode.TEST)
+		   .build(); 
+
+	 //Initialization for Banner
+	 AdViewBannerManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});      
+
+	 // request banner ads after initialization
+	 AdViewBannerManager.getInstance(this).requestAd(this,key, this);
+
+	 // Gets the currently requested banner View,upload it to your own layout.
+	 View view = AdViewBannerManager.getInstance(this).getAdViewLayout(this,key);
+	 layout.addView(view);
+
 
 ```
 
-##6.2 Ad Banner events handling
+**6.2 Ad Banner events handling**
 
 To receive events from ad, you should implement an event listener interface **AdViewBannerListener**.
 
@@ -272,24 +270,24 @@ Since interstitial ad has a certain life cycle, Please do not wait too long afte
 Add the following code to your activity:
 
 ```
- //Basic Initialization
- InitConfiguration initConfiguration = new InitConfiguration.Builder(this)
-                .setUpdateMode(InitConfiguration.UpdateMode.EVERYTIME)
-                .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
-                .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
-                .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
-                .setRunMode(InitConfiguration.RunMode.TEST)
-                .build(); 
+	 //Basic Initialization
+	 InitConfiguration initConfiguration = new InitConfiguration.Builder(this)
+			.setUpdateMode(InitConfiguration.UpdateMode.EVERYTIME)
+			.setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
+			.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+			.setRunMode(InitConfiguration.RunMode.TEST)
+			.build(); 
 
-//Initialization for interstitual advertisement
-AdViewInstlManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
+	//Initialization for interstitual advertisement
+	AdViewInstlManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
 
-		
-// interstitial ad request after initialization, ad request and display, used alone
-AdViewInstlManager.getInstance(this).requestAd(this,MainActivity.SDK_KEY);
 
-// After ad request succeed , call the display ad
-AdViewInstlManager.getInstance(this).showAd(this,MainActivity.SDK_KEY);
+	// interstitial ad request after initialization, ad request and display, used alone
+	AdViewInstlManager.getInstance(this).requestAd(this,MainActivity.SDK_KEY);
+
+	// After ad request succeed , call the display ad
+	AdViewInstlManager.getInstance(this).showAd(this,MainActivity.SDK_KEY);
 
 
 ```
@@ -332,22 +330,23 @@ To receive events from ad, you should implement an event listener interface **Ad
 **7.3 Create custom style interstitial**
 
 ```
-// You need to set the user-managed mode when initialization, and you must manually call the display
-//after the setting   
-InitConfiguration.setInstlControlMode(InstlControlMode.USERCONTROL);
+	// You need to set the user-managed mode when initialization, and you must manually call the display
+	//after the setting   
+	InitConfiguration.setInstlControlMode(InstlControlMode.USERCONTROL);
 
-// request interstitial ads after initialization 
-AdViewInstlManager.getInstance(this).requestAd(this,MainActivity.key2);
+	// request interstitial ads after initialization 
+	AdViewInstlManager.getInstance(this).requestAd(this,MainActivity.key2);
 
-// You need to call it when the ads need to be displayed, the return is not null (review) means there’s an ad to return, otherwise it does not get ads.
-// The returned view can be placed in a customcontainer, such as dialog
-AdViewInstlManager.getInstance(this).getInstlView (key);
+	// You need to call it when the ads need to be displayed, the return is not null (review) means there’s an ad to return, 
+	otherwise it does not get ads.
+	// The returned view can be placed in a customcontainer, such as dialog
+	AdViewInstlManager.getInstance(this).getInstlView (key);
 
-// Display report method should be called when successfully display (required)
-AdViewInstlManager.getInstance(this).reportImpression(key);
+	// Display report method should be called when successfully display (required)
+	AdViewInstlManager.getInstance(this).reportImpression(key);
 
-// When the ad is clicked, the click event handling method should be called ,otherwise there will no response(required)
-AdViewInstlManager.getInstance(this).reportClick(key);
+	// When the ad is clicked, the click event handling method should be called ,otherwise there will no response(required)
+	AdViewInstlManager.getInstance(this).reportClick(key);
 
 ```
 
@@ -361,27 +360,27 @@ You can refer to the code of AdInstlActivity in AdViewDemo Project.
 Add the following code to your activity:
 
 ```
-//Basic Initialization
-InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
-                .setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
-                .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
-                .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
-                .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
-                .setRunMode(InitConfiguration.RunMode.TEST)
-                .build();
+	//Basic Initialization
+	InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
+			.setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
+			.setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
+			.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+			.setRunMode(InitConfiguration.RunMode.TEST)
+			.build();
 
-//Intialization for Open Screen ad
-AdViewSpreadManager.getInstance(this).init(initConfiguration, new String[]{MainActivity.SDK_KEY});
+	//Intialization for Open Screen ad
+	AdViewSpreadManager.getInstance(this).init(initConfiguration, new String[]{MainActivity.SDK_KEY});
 
-		
-// Set the logo at the bottom of opening screen (not required), you can also upload local images or images link.
-AdViewSpreadManager.getInstance(this).setSpreadLogo(R.drawable.spread_logo);
 
-// Set background color of opening screen( not required)
-AdViewSpreadManager.getInstance(this).setSpreadBackgroudColor( Color.WHITE);
+	// Set the logo at the bottom of opening screen (not required), you can also upload local images or images link.
+	AdViewSpreadManager.getInstance(this).setSpreadLogo(R.drawable.spread_logo);
 
-// Request opening screen ads
-AdViewSpreadManager.getInstance(this).request(this,MainActivity.SDK_KEY,(RelativeLayout) findViewById(R.id.spreadlayout), this);
+	// Set background color of opening screen( not required)
+	AdViewSpreadManager.getInstance(this).setSpreadBackgroudColor( Color.WHITE);
+
+	// Request opening screen ads
+	AdViewSpreadManager.getInstance(this).request(this,MainActivity.SDK_KEY,(RelativeLayout) findViewById(R.id.spreadlayout), this);
 
 ```
 
@@ -429,20 +428,21 @@ To receive events from ad, you should implement an event listener interface **Ad
 **8.3 Custom countdown notification style on the top of opening screen**
 
 ```
-// Skip button will appears on the top after settings
-AdViewSpreadManager.getInstance(this).setSpreadNotifyType(this, AdSpreadManager.NOTIFY_COUNTER_NUM);
+	// Skip button will appears on the top after settings
+	AdViewSpreadManager.getInstance(this).setSpreadNotifyType(this, AdSpreadManager.NOTIFY_COUNTER_NUM);
 
-// Defaults, none notification will be displayed
-public final static int NOTIFY_COUNTER_NULL = 0;
+	// Defaults, none notification will be displayed
+	public final static int NOTIFY_COUNTER_NULL = 0;
 
-// Countdown will be shown after settings
-public final static int NOTIFY_COUNTER_NUM = 1;
+	// Countdown will be shown after settings
+	public final static int NOTIFY_COUNTER_NUM = 1;
 
-// Skip button will be shown on the top after settings,but it will appear only after specified times.
-public final static int NOTIFY_COUNTER_TEXT = 2;
+	// Skip button will be shown on the top after settings,but it will appear only after specified times.
+	public final static int NOTIFY_COUNTER_TEXT = 2;
 
-// Will call this after settings:onAdNotifyCustomCallback(String key,ViewGroup view,intruleTime,int delayTime) interface, you //can custom notification styles
-public final static int NOTIFY_COUNTER_CUSTOM = 3;
+	// Will call this after settings:onAdNotifyCustomCallback(String key,ViewGroup view,intruleTime,int delayTime) interface, you 
+	//can custom notification styles
+	public final static int NOTIFY_COUNTER_CUSTOM = 3;
 
 ```
 
@@ -457,63 +457,65 @@ For opening advertising please make sure the exposure time is sufficient, otherw
 Add a listview to layout file, e.g :
 
 ```
-<ListView
-   android:id="@+id/list"
-   android:layout_width="match_parent"
-   android:layout_height="match_parent" />
-   
+	<ListView
+	   android:id="@+id/list"
+	   android:layout_width="match_parent"
+	   android:layout_height="match_parent" />
+
 ```
 
 Add the following code to your activity:
 
 ```
-//Basic Initialization
-InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
-                .setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
-                .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
-                .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
-                .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
-                .setRunMode(InitConfiguration.RunMode.TEST)
-                .build();
+	//Basic Initialization
+	InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
+			.setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
+			.setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
+			.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+			.setRunMode(InitConfiguration.RunMode.TEST)
+			.build();
 
-//Intialization for Native advertisement
-AdViewNativeManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
+	//Intialization for Native advertisement
+	AdViewNativeManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
 
 
-//Initialized native ads should custom ad layout in advance, and apply native ad ID at app background
-AdViewNativeManager.getInstance(this).requestAd(this,MainActivity.SDK_KEY, 2,this); 
+	//Initialized native ads should custom ad layout in advance, and apply native ad ID at app background
+	AdViewNativeManager.getInstance(this).requestAd(this,MainActivity.SDK_KEY, 2,this); 
 
-//set native callback interface
-@Override
-public void onReceivedAd(String key,List arg0) {
-for (int i = 0; i < arg0.size(); i++) { 
-Data data = newData();
-NativeAdInfo nativeAdInfo = (NativeAdInfo) arg0.get(i);
-data.descript = nativeAdInfo.getDescription(); 
-data.icon = nativeAdInfo.getIconUrl();
-data.title = ((NativeAdInfo) arg0.get(i)).getTitle();
-data.adInfo = (NativeAdInfo) arg0.get(i);
-((NativeAdInfo) arg0.get(i)).getIconHeight();
-data.isAd = true;
-Log.i("native information ", "data.descript: " + data.descript + "\ndata.icon: " + data.icon + "\ndata.title:" + data.title); list.add(3, data);
-((NativeAdInfo) arg0.get(i)).onDisplay(newView( AdNativeActivity.this));
-} 
-}
+	//set native callback interface
+	@Override
+	public void onReceivedAd(String key,List arg0) {
+	for (int i = 0; i < arg0.size(); i++) { 
+		Data data = newData();
+		NativeAdInfo nativeAdInfo = (NativeAdInfo) arg0.get(i);
+		data.descript = nativeAdInfo.getDescription(); 
+		data.icon = nativeAdInfo.getIconUrl();
+		data.title = ((NativeAdInfo) arg0.get(i)).getTitle();
+		data.adInfo = (NativeAdInfo) arg0.get(i);
+		((NativeAdInfo) arg0.get(i)).getIconHeight();
+		data.isAd = true;
+		Log.i("native information ", "data.descript: " + data.descript + "\ndata.icon: " + data.icon + "\ndata.title:" + 
+		data.title); 
+		list.add(3, data);
+		((NativeAdInfo) arg0.get(i)).onDisplay(newView( AdNativeActivity.this));
+		} 
+	}
 
-/**
- * This function is called when the ad requests failed.
- */
-@Override
-public void onFailedReceivedAd(String arg0) {
-}
-/**
- * This function is called when download ads, to back to
-   the status of current downloading contents.
- */
-@Override
-public void onAdStatusChanged (int arg0) {
-}
-});
+	/**
+	 * This function is called when the ad requests failed.
+	 */
+	@Override
+	public void onFailedReceivedAd(String arg0) {
+	}
+	/**
+	 * This function is called when download ads, to back to
+	   the status of current downloading contents.
+	 */
+	@Override
+	public void onAdStatusChanged (int arg0) {
+	}
+	});
 
 ```
 
@@ -548,24 +550,24 @@ To receive events from ad, you should implement an event listener interface **Ad
 Add the following code in activity,
 
 ```
-//Basic Initialization
-InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
-                .setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
-                .setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
-                .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
-                .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
-                .setRunMode(InitConfiguration.RunMode.TEST)
-                .build();
+	//Basic Initialization
+	InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
+			.setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
+			.setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
+			.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+			.setRunMode(InitConfiguration.RunMode.TEST)
+			.build();
 
-//Initialization For Video ads
-AdViewVideoManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
+	//Initialization For Video ads
+	AdViewVideoManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
 
-//Request video ads after initialization. Request and display ads should be used separately.
-AdViewVideoManager.getInstance(this).requestAd(this,MainActivity.SDK_KEY,this);
+	//Request video ads after initialization. Request and display ads should be used separately.
+	AdViewVideoManager.getInstance(this).requestAd(this,MainActivity.SDK_KEY,this);
 
-//set video callback interface
-// Call display ad after ad request succeed.
-AdViewVideoManager.getInstance(this).playVideo(this,MainActivity.SDK_KEY);
+	//set video callback interface
+	// Call display ad after ad request succeed.
+	AdViewVideoManager.getInstance(this).playVideo(this,MainActivity.SDK_KEY);
 
 ```
 
@@ -625,60 +627,60 @@ There’s a “Custom ad platform” in add ad platform . Developer needs to fil
  **11.2 Custom function implementation **                                                                                                 
 
 ```
-// you can visit https://developer.amazon.com/sdk/mobileads.html
-// Must with: final AdViewAdapter adapter, final String key these two parameter
-// Otherwise will result in the failure in custom ad
+	// you can visit https://developer.amazon.com/sdk/mobileads.html
+	// Must with: final AdViewAdapter adapter, final String key these two parameter
+	// Otherwise will result in the failure in custom ad
 
-public void amazon_proc(final AdViewAdapter adapter,final String key){
+	public void amazon_proc(final AdViewAdapter adapter,final String key){
 
-// TODO Auto-generated method stub
-AdRegistration.enableLogging(this, true);
-AdRegistration.enableTesting(this, true);
-AdRegistration.setAppKey(this, "sample-app- v1_pub-2");
+	// TODO Auto-generated method stub
+	AdRegistration.enableLogging(this, true);
+	AdRegistration.enableTesting(this, true);
+	AdRegistration.setAppKey(this, "sample-app- v1_pub-2");
 
-// Create an example of amazon in adview
-adView = new AdLayout(this, AdSize.AD_SIZE_320x50);
+	// Create an example of amazon in adview
+	adView = new AdLayout(this, AdSize.AD_SIZE_320x50);
 
-//appointed listen interface
-adView.setListener(new AdListener() {
-@Override
-Log.d("AdViewSample", arg1.getAdType().toString()+ " Ad loaded successfully.");
+	//appointed listen interface
+	adView.setListener(new AdListener() {
+	@Override
+	Log.d("AdViewSample", arg1.getAdType().toString()+ " Ad loaded successfully.");
 
-// after the ad request succeed, start the timer and request another ad when time’s up.
-adapter.reportImpression(key);
-adapter.rotateDelayedAd(key);
-}
-@Override
-public void onAdExpanded(AdLayout arg0) {
-// TODO Auto-generated method stub
-}
-@Override
-public void onAdCollapsed(AdLayout arg0) {
-// TODO Auto-generated method stub
-}
-@Override
-public void onAdFailedToLoad(AdLayout arg0, AdError arg1) {
-// TODO Auto-generated method stub
-Log.w("AdViewSample","Ad failed to load. Code: "+ arg1.getResponseCode() +", Message: "+arg1.getResponseMessage());
+	// after the ad request succeed, start the timer and request another ad when time’s up.
+	adapter.reportImpression(key);
+	adapter.rotateDelayedAd(key);
+	}
+	@Override
+	public void onAdExpanded(AdLayout arg0) {
+	// TODO Auto-generated method stub
+	}
+	@Override
+	public void onAdCollapsed(AdLayout arg0) {
+	// TODO Auto-generated method stub
+	}
+	@Override
+	public void onAdFailedToLoad(AdLayout arg0, AdError arg1) {
+	// TODO Auto-generated method stub
+	Log.w("AdViewSample","Ad failed to load. Code: "+ arg1.getResponseCode() +", Message: "+arg1.getResponseMessage());
 
-// start to request another ad when failed.
-adapter.rotatePriAd(key);
-}
-});
-AdViewBannerManager.getInstance(AdBannerActivity.this).addSubView(AdViewBannerManager.getInstance(AdBannerActivity.this) .
-getAdViewLayout(AdBannerActivity.this,key), adView, key); 
-AdTargetingOptions adOptions = new AdTargetingOptions(); 
-adView.loadAd(adOptions);
+	// start to request another ad when failed.
+	adapter.rotatePriAd(key);
+	}
+	});
+	AdViewBannerManager.getInstance(AdBannerActivity.this).addSubView(AdViewBannerManager.getInstance(AdBannerActivity.this) .
+	getAdViewLayout(AdBannerActivity.this,key), adView, key); 
+	AdTargetingOptions adOptions = new AdTargetingOptions(); 
+	adView.loadAd(adOptions);
 
-}
+	}
 
 ```
 
 ##XII. Appointed app channel
 Developers add the above content in the Mainfest files:
 ```
-<meta-data android:name="AdView_CHANNEL" android:value=“GFAN">
-</meta-data>
+	<meta-data android:name="AdView_CHANNEL" android:value=“GFAN">
+	</meta-data>
 
 ```
 
