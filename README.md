@@ -213,35 +213,35 @@ Add the following code to your activity:
 To receive events from ad, you should implement an event listener interface **AdViewBannerListener**.
 
 ```
-public interface AdViewBannerListener{
+    public interface AdViewBannerListener{
 
-/**
- * Use this function when the ad is clicked
- */
-public void onAdClick(String key);
-
-/**
- * Use this function when the ad is displayed
- */
-public void onAdDisplay(String key);
-
-/**
- * Use this function when the ad is closed
- */
-public void onAdClose(String key);
-
-/**
- * Use this function only when the ad is interrupted
- by abnormity or failure
- */
-public void onAdFailed(String key);
-
-/**
- * once ad is Ready while this function will triggered
- */
- public void onAdReady(String key);
-}
-
+            /**
+             * Use this function when the ad is clicked
+             */
+            public void onAdClick(String key);
+    
+            /**
+             * Use this function when the ad is displayed
+             */
+            public void onAdDisplay(String key);
+    
+            /**
+             * Use this function when the ad is closed
+             */
+            public void onAdClose(String key);
+    
+            /**
+             * Use this function only when the ad is interrupted
+             by abnormity or failure
+             */
+            public void onAdFailed(String key);
+    
+            /**
+             * once ad is Ready while this function will triggered
+             */
+            public void onAdReady(String key);
+        
+    }
 ```
 
 **Note:**
