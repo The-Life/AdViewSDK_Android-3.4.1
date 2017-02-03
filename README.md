@@ -253,8 +253,6 @@ You can refer to the code of AdBannerActivity in AdViewDemo Project.
 
 If you want banner advertisement directly from ad networks use this below configuration accordingly you choosen ad Network.
 
-![Add types of ads](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/V.png)
-
 
 | Platform | Constant | examples |
 | --- | --- | --- |
