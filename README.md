@@ -35,11 +35,8 @@
 3. Select “Android” follow the prompts to complete the relevant information About the application and you will get the sole unique SDK key
 4. Click “APP management” page→Configure : enter adID in“Not set”, turn on the switch, set the capacity to 100%, click “Save”. If you need more platform please turn on the switch, click “Add ad platform” and configure those respected ids. The cumulative percentage must be 100%.you can use AdView Auction Ads. Generally recommended number of platforms is 1-3.                     
 ![Home page](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
-5. When open bidding or remnant, if you need to pop-up confirmation box twice when click the ad, you can set it as:           
- -click “edit”;                                                                                                               
- -switch on “confirm tips” . Ignore it if you don’t need this process.                                                         
 
-
+5.(Optional) if you wish to show prompt when you click on the ad - Under app management --> select "Edit" against your app, Switch on "Twice confirmation" button under "Advertising text settings".									                               
 ![Bidding](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.1.png)
 
 ![bidding-2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.2.png)
@@ -47,53 +44,51 @@
 **Notes:**
 
 1. We provide you with SDK that gives you the freedom to choose your favourite advertising agency. Apart from the bidding and remnant ,other ad platforms are third- party. The App key needed should be register and apply from corresponding official website, and then configure them to the corresponding platform at Adview background.
-2. If you are fresher, you don’t know much about ad platform, which ad platform to choose or which ad platform revenue is stable, we suggest you use bidding first.
+2. If you are fresher, you don’t know much about ad platform, which ad platform to choose or which ad platform revenue is stable, we suggest you to use bidding first.
 3. Bidding and remnant ads need to complement market information at background, and you will not get formal ads until pass reviewed. Before that all are test ads which do not charge.
-4. **Switch**
-Only those ads of which platform is switched on will display in the APP.
-5. **Capacity** 
-Only capacity of which is switched on will be valid. For the request priority of various platform, usually those of high proportion will get the prior request. Switch platform and at the same time adjust ad capacity. For all ads with the status ON, the capacity should be 100, otherwise they cannot be saved correctly.
+4. Ads will be shown of only those ad platforms for which the **switch** is on against them.						
+5. Only the "capacity" of those ad platforms for which the switch is on will be valid, the adplatform with higher proportion will get prior request, for all ad platforms with status as ON, the cumulative should be 100%. Other wise the your priority can't be saved.  
 6. For Banner ad, full screen/interstitial , opening screen ,etc, there’s a save button at the bottom of the page. You should click the save button every time you modify a ad format, otherwise the modification is invalid .
 7. **Region optimization:** 
-Region optimization function means mobile phone displays the domestic configured ads when it’s in domestic, while in foreign country it display foreign configured ads to meet the different demands to the maximum extent. When the region optimization function closed, it does not distinguish between home and abroad.
+Region optimization function means mobile phone displays the regional configured ads when it’s with in the region, while in foreign country it display foreign configured ads to meet the different demands to the maximum extent. When the region optimization function is closed, it does not distinguish between home and abroad. 
 
 
 ##Ⅱ.About AdViewSDK_Android-3.4.1
 
-1. Clone or download AdViewSDK_Android-3.4.1 package .In the AdViewSDK_Android-3.4.1 contanis some important files as AdViewDemo,libs,umeng_res and wiyun_res.
+1. Clone or download AdViewSDK_Android-3.4.1 package to go ahead with the integration process. This package contains all files needed for smooth integration and some of the important fils include AdViewDemo,libs,umeng_res and wiyun_res.
 
 **AdViewDemo**
-folder for Android Demo Project.It has all types of advertisement sample code with explanation.
+This folder contains Adview demo project which includes all types of ad format (banner,interstitial,video,native,open screen) sample code with explanation.
 
 **libs**
-folder ,it contains the SDK for all ad platforms. 
-(README.pdf has the ad platform instructions corresponding to each jar.)
+It contains all the .jar file SDK needed for ad platform integration. 
+(Libinfo.pdf has the ad platform instructions corresponding to each jar.)
 
 **umeng_res**
-To integrate Umeng SDK, you need to put the files of umeng_res given in the demo to application res , and add corresponding permissions .
+To integrate Umeng SDK, you need to put the files of umeng_res given in the AdViewSDK_Android-3.4.1 to your application resource folder, and add corresponding permissions in the Andoid manifest file.
 
 **wiyun_res**
-To integrate Wiyun SDK, you need to put the files of wiyun_res given in the demo to application res , and add corresponding permissions .
+To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdViewSDK_Android-3.4.1 to your application resource folder, and add corresponding permissions in the Andoid manifest file.
 
 
 ##III. Add SDK
 
-1. Clone or download AdViewSDK_Android-3.4.1 package here.In the AdViewSDK_Android-3.4.1 folder contains libs folder ,it contains the SDK for all ad platforms. (README.pdf has the ad platform instructions corresponding to each jar.)
-2. Please put AdViewSDK_Android.jar, android-support-v4.jar into your application.
-3. Add other ad platform SDK that App may use in the same way. ( Can only use the jar provided by Adview. Use jar from other channels will make the ad cannot display.
+1. Clone or download AdViewSDK_Android-3.4.1 package here.In the AdViewSDK_Android-3.4.1 folder contains libs folder ,it contains the SDK for all ad platforms. (Libinfo.pdf has the ad platform instructions corresponding to each jar.)
+2. Please copay and paste AdViewSDK_Android.jar, android-support-v4.jar into your application lib folder
+3. In order to add new ad platforms please copy the .jar file of that particular ad platform provided by AdView to your lib folder and follow the same for all other ad platforms you would like to integrate.  
 
 ![add SDK](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/IV.png)
  
 **Note :**
 
-1. To integrate Umeng SDK, you need to put the files of umeng_res given in the demo to application res , and add corresponding permissions .
-2. To integrate Wiyun SDK, you need to put the files of wiyun_res given in the demo to application res , and add corresponding permissions .
+1. To integrate Umeng SDK, you need to put the files of umeng_res given in the AdViewSDK_Android-3.4.1 to your application resource folder, and add corresponding permissions in the Andoid manifest file.
+2.To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdViewSDK_Android-3.4.1 to your application resource folder, and add corresponding permissions in the Andoid manifest file.
 
 ##IV. AndroidManifest.xml text configuration
 
 **4.1 Add permission code**
 
-Required permissions should be added ( complete code please refer to AndroidManifest file in Demo.
+Required permissions should be added (please refer to AndroidManifest file in the AdViewDemo project).
 
 ```
 	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -117,7 +112,7 @@ Required permissions should be added ( complete code please refer to AndroidMani
 
 **4.2 Add Activity declaration**
 
-Some platform need to declare activity to work normal. Declaration is contained in application label, more details please refer to AndroidManifest in Demo. 
+The given code should be added to in AndroidManifest file for AdView, as some platforms need to declare activity to work normal, please refer to AndroidManifest file in AdViewDemo project.  
 
 **Configurations that adview bidding ads should add:**
 
@@ -135,10 +130,11 @@ Some platform need to declare activity to work normal. Declaration is contained 
 
 ##V. Acquire ad configurations
 
+#Action needed 
 **Note:**
 
 1. InitConfiguration serve for the overall procedure, just need to transfer once only.
-2. The set method s above are optional, not required.
+2. The set methods above are optional, not required.
 3. From 3.2.4 version, SDK supports setting up multiple ad slots (SDK-KEY) in one application. Take 3 ad slots of demo keyset for example, some APP would like to set different ad slots in multiple Activities, thus to statistic the user visit amount of each Activity based on the amount of ad display. If one ad slot can meet the demand of APP, then there’s no need to apply multiple ad slots.
 
 ```
@@ -245,6 +241,7 @@ To receive events from ad, you should implement an event listener interface **Ad
 **Note:**
 You can refer to the code of AdBannerActivity in AdViewDemo Project.
 
+#Action needed 
 **Increase part of the platform size Interface:**
 
 **Note:**
@@ -265,7 +262,7 @@ If you want banner advertisement directly from ad networks use this below config
 
 **Note:**
 
-Since interstitial ad has a certain life cycle, Please do not wait too long after the request to call the screen display method, so as to avoid advertising invalid
+Since interstitial ad has a certain life cycle, Please do not wait too long after the request to call the screen display method, so as to avoid advertising invalid.
 
 Add the following code to your activity:
 
@@ -448,7 +445,7 @@ To receive events from ad, you should implement an event listener interface **Ad
 
 **Note:**
 
-For opening advertising please make sure the exposure time is sufficient, otherwise it will affect the income. You can refer to the code of SpreadScreenActivity in AdViewDemo Project.
+For opening advertising please make sure the exposure time is sufficient, otherwise it will affect the ad revenue. You can refer to the code of SpreadScreenActivity in AdViewDemo Project.
 
 ##IX. Create native advertising 
 
@@ -616,15 +613,14 @@ You can refer to the code of AdVideoActivity in AdView Demo Project.
 
 Sometimes developers would like to add a platform which is not aggregated, Adview provide ways to meet this demand.
 
+#Action needed 
 There’s a “Custom ad platform” in add ad platform . Developer needs to fill in app ID1, this is the name of a function which needs client side to complete. The function of this function is to call the ad platform interface . As for App ID2, just fill in something, otherwise you cannot save it.
  
  
 ![custom ad platform](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VI.png)
  
 
- **11.1 The example that referred code Demo provide is the implementation of Amazon ad; **                                               
-
- **11.2 Custom function implementation **                                                                                                 
+ **11.1 For Custom platform (Amazon) function implementation **                                                                                                 
 
 ```
 	// you can visit https://developer.amazon.com/sdk/mobileads.html
@@ -675,16 +671,18 @@ There’s a “Custom ad platform” in add ad platform . Developer needs to fil
 	}
 
 ```
+**You can refer the code in AdViewDemo project --> BannerActivity for implementation of Amazon ad; ** 
 
 ##XII. Appointed app channel
-Developers add the above content in the Mainfest files:
+Please add the below code in the AndroidMainfest file:
 ```
 	<meta-data android:name="AdView_CHANNEL" android:value=“GFAN">
 	</meta-data>
-
 ```
 
-(must mark when upload ,otherwise will not pass review);
+(You must add the above code,otherwise you application won't be able to pass the review);
+
+#Action needed 
 AdViewTargeting.setChannel, the former interface has been invalid;
 Currently the channels that Adview support are as follow:
 
