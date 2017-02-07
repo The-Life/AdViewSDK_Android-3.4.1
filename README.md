@@ -717,10 +717,11 @@ If there’s no configuration or configure other value, all seemed as “OTHER�
 
 ##XIII. Frequently Asked Questions
 
+#Action required
 **13.1 What if an application wants to mix (ProGuard)?**
 
 AdView is dynamically call, it does not have to mix. Advertising agency code has been independently mixed, if you need to mixed your own code, you can add the following content at the beginning of the file proguard.cfg. More details please refer to the code in sample. 
-( The below code can be copied in the sample)
+( The below code can be copied in the sample) 
 
 ```
 #The below is used for AdView SDK settings,only instead for your app
@@ -919,8 +920,8 @@ public <init>(android.content.Context, android.util.AttributeSet);
 -keep class cn.pro.ad.sdk.*
 
 ```
-
- Currently Adview SDK mixed support proguard4.6 version or above, developers can go to the proguard official website http://sourceforge.net/ projects/proguard/files/proguard/ to download 4.6 version or above. If you want to upgrade, just replace the downloaded version with “android-sdk- windows\tools\proguard” 
+#Action needed
+Currently Adview SDK mixed support proguard4.6 version or above, developers can go to the proguard official website http://sourceforge.net/ projects/proguard/files/proguard/ to download 4.6 version or above. If you want to upgrade, just replace the downloaded version with “android-sdk- windows\tools\proguard” 
 
 **13.2 Contact us** 
 
