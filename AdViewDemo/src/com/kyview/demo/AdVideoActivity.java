@@ -33,10 +33,11 @@ public class AdVideoActivity extends Activity implements OnClickListener,
 		InitConfiguration initConfiguration = new InitConfiguration.Builder(
 				this).setUpdateMode(InitConfiguration.UpdateMode.EVERYTIME)
 				.setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
-				.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
-				.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
-				.setRunMode(InitConfiguration.RunMode.TEST)
+//                .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+//                .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+				.setRunMode(InitConfiguration.RunMode.NORMAL)
 				.build();
+
 
 		//Initialization For Video ads
 		AdViewVideoManager.getInstance(this).init(initConfiguration,

@@ -30,7 +30,11 @@ public class AdNativeActivity extends Activity implements AdViewNativeListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_adnative);
+
+		//ListView for Native ad
 		listView = (ListView) findViewById(R.id.list);
+
+		//Data Class Type Array List for ListView Data
 		list = new ArrayList<AdNativeActivity.Data>();
 
 
@@ -38,10 +42,11 @@ public class AdNativeActivity extends Activity implements AdViewNativeListener {
 		InitConfiguration initConfiguration = new InitConfiguration.Builder(
 				this).setUpdateMode(InitConfiguration.UpdateMode.EVERYTIME)
 				.setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
-				.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
-				.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
-				.setRunMode(InitConfiguration.RunMode.TEST)
+//                .setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+//                .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+				.setRunMode(InitConfiguration.RunMode.NORMAL)
 				.build();
+
 
 
 		//Intialization for Native advertisement
@@ -53,18 +58,24 @@ public class AdNativeActivity extends Activity implements AdViewNativeListener {
 				MainActivity.SDK_KEY, 2, this);
 
 
+		/**
+		 * This is Sample View of Native Ad
+		 */
+//
+//            for (int i = 0; i < 10; i++) {
+//                Data data = new Data();
+//                data.icon = "http://www.adview.cn/static/images/logo_1.png";
+//                data.title = "AdView,�ƶ���潻��ƽ̨";
+//                data.descript = "AdView�ǹ����׸����������������ƶ���潻��ƽ̨��AdExchange��";
+//                list.add(data);
+//            }
 
-		for (int i = 0; i < 10; i++) {
-			Data data = new Data();
-			data.icon = "http://www.adview.cn/static/images/logo_1.png";
-			data.title = "AdView,�ƶ���潻��ƽ̨";
-			data.descript = "AdView�ǹ����׸����������������ƶ���潻��ƽ̨��AdExchange��";
-			list.add(data);
-		}
 
-		adAdapter = new NativeAdAdapter(AdNativeActivity.this, list);
+		adAdapter = new NativeAdAdapter(NativeActivity.this, list);
 
 		listView.setAdapter(adAdapter);
+
+
 		// listView.setOnItemClickListener(new OnItemClickListener() {
 		//
 		// @Override
@@ -76,18 +87,22 @@ public class AdNativeActivity extends Activity implements AdViewNativeListener {
 		// }
 		// }
 		// });
-	}
 
+
+	}
 
 
 
 	//CallBack Methods For Native Ads
 
+	//Ad Failed
 	@Override
 	public void onAdFailed(String arg0) {
 
 	}
 
+
+	//Ad Success
 	@Override
 	public void onAdRecieved(String arg1, ArrayList arg0) {
 
@@ -100,13 +115,15 @@ public class AdNativeActivity extends Activity implements AdViewNativeListener {
 			data.adInfo = (NativeAdInfo) arg0.get(i);
 			((NativeAdInfo) arg0.get(i)).getIconHeight();
 			data.isAd = true;
-			Log.i("NATIVE", "data.descript: " + data.descript + "\ndata.icon: "
+			Log.i("Native information：", "data.descript: " + data.descript + "\ndata.icon: "
 					+ data.icon + "\ndata.title:" + data.title);
-			list.add(3, data);
+			list.add(data);
 			((NativeAdInfo) arg0.get(i)).onDisplay(new View(
-					AdNativeActivity.this));
+					NativeActivity.this));
 		}
+
 		adAdapter.notifyDataSetChanged();
+
 
 		// ((NativeAdInfo) arg0.get(0)).onClick(new View(
 		// AdNativeActivity.this));
