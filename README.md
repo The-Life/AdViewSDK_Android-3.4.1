@@ -271,8 +271,8 @@ Add the following code to your activity:
 	 InitConfiguration initConfiguration = new InitConfiguration.Builder(this)
 			.setUpdateMode(InitConfiguration.UpdateMode.EVERYTIME)
 			.setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
-			.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
-			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+//			.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+//			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 			.setRunMode(InitConfiguration.RunMode.TEST)
 			.build(); 
 
@@ -361,8 +361,8 @@ Add the following code to your activity:
 	InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
 			.setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
 			.setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
-			.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
-			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+//			.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+//			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 			.setRunMode(InitConfiguration.RunMode.TEST)
 			.build();
 
@@ -468,8 +468,8 @@ Add the following code to your activity:
 	InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
 			.setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
 			.setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
-			.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
-			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+//			.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+//			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 			.setRunMode(InitConfiguration.RunMode.TEST)
 			.build();
 
@@ -551,8 +551,8 @@ Add the following code in activity,
 	InitConfiguration initConfiguration = new InitConfiguration.Builder(this)                
 			.setUpdateMode( InitConfiguration.UpdateMode.EVERYTIME)
 			.setBannerCloseble(InitConfiguration.BannerSwitcher.CANCLOSED)
-			.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
-			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
+//			.setInstlControlMode(InitConfiguration.InstlControlMode.USERCONTROL)
+//			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 			.setRunMode(InitConfiguration.RunMode.TEST)
 			.build();
 
