@@ -130,7 +130,6 @@ The given code should be added to in AndroidManifest file for AdView, as some pl
 
 ##V. Acquire ad configurations
 
-#Action needed 
 **Note:**
 
 1. InitConfiguration serve for the overall procedure, just need to transfer once only.
