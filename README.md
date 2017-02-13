@@ -612,7 +612,6 @@ You can refer to the code of AdVideoActivity in AdView Demo Project.
 
 Sometimes developers would like to add a platform which is not aggregated, Adview provide ways to meet this demand.
 
-#Action needed 
 There’s a “Custom ad platform” in add ad platform . Developer needs to fill in app ID1, this is the name of a function which needs client side to complete. The function of this function is to call the ad platform interface . As for App ID2, just fill in something, otherwise you cannot save it.
  
  
