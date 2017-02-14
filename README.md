@@ -618,6 +618,7 @@ There’s a “Custom ad platform” in add ad platform . Developer needs to fil
 ![custom ad platform](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VI.png)
  
 
+# Action needed - what is the need of this ? can we remove this if not needed ? 
  **11.1 For Custom platform (Amazon) function implementation **                                                                                                 
 
 ```
@@ -680,7 +681,7 @@ Please add the below code in the AndroidMainfest file:
 
 (You must add the above code,otherwise you application won't be able to pass the review);
 
-#Action needed 
+#Action needed (may we know the need of this code and where is it useful ? ) 
 AdViewTargeting.setChannel, the former interface has been invalid;
 Currently the channels that Adview support are as follow:
 
@@ -715,6 +716,7 @@ If there’s no configuration or configure other value, all seemed as “OTHER�
 
 ##XIII. Frequently Asked Questions
 
+# Action Needed ! (do we need to add this file in progurad file ? ) 
 **13.1 What if an application wants to mix (ProGuard)?**
 
 AdView is dynamically call, it does not have to mix. Advertising agency code has been independently mixed, if you need to mixed your own code, you can add the following content at the beginning of the file proguard.cfg. More details please refer to the code in sample. 
