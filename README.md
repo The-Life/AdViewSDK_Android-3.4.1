@@ -148,7 +148,7 @@ The given code should be added to in AndroidManifest file for AdView, as some pl
 	.setBannerCloseble(BannerSwitcher.CANCLOSED)
 	//interstitial switcher can be closed
 	.setInstlCloseble(InstlSwitcher.CANCLOSE ) ''
-	// more log under test mode, after the app launch please delete
+	//more log under test mode , before uploading the application to live please delete this code .
 	.setRunMode(RunMode.TEST)
 	// Default situation. After setting, html5 and not-html5 ads can be received,
 	while Html5Switcher.SUPPORT can only receive html5 ad .setHtml5Switcher(Html5Switcher.NONSUPPORT)
@@ -179,6 +179,7 @@ Add the following code to your activity:
 
 
 ```
+
 	 //Basic Initialization
 	 InitConfiguration initConfiguration = new InitConfiguration.Builder(this)
 		   .setUpdateMode(InitConfiguration.UpdateMode.EVERYTIME)
@@ -187,6 +188,12 @@ Add the following code to your activity:
 //		   .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 		   .setRunMode(InitConfiguration.RunMode.TEST)
 		   .build(); 
+		   
+**Note:**
+
+more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before uploading the application to live please delete this code .
+
+	  
 
 	 //Initialization for Banner
 	 AdViewBannerManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});      
@@ -274,6 +281,11 @@ Add the following code to your activity:
 //			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 			.setRunMode(InitConfiguration.RunMode.TEST)
 			.build(); 
+			
+			
+**Note:**
+
+more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before uploading the application to live ple ase delete this code .
 
 	//Initialization for interstitual advertisement
 	AdViewInstlManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
@@ -364,6 +376,10 @@ Add the following code to your activity:
 //			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 			.setRunMode(InitConfiguration.RunMode.TEST)
 			.build();
+			
+**Note:**
+
+more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before uploading the application to live ple ase delete this code .
 
 	//Intialization for Open Screen ad
 	AdViewSpreadManager.getInstance(this).init(initConfiguration, new String[]{MainActivity.SDK_KEY});
@@ -471,7 +487,10 @@ Add the following code to your activity:
 //			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 			.setRunMode(InitConfiguration.RunMode.TEST)
 			.build();
+			
+**Note:**
 
+more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before uploading the application to live ple ase delete this code .
 	//Intialization for Native advertisement
 	AdViewNativeManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
 
@@ -554,6 +573,10 @@ Add the following code in activity,
 //			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 			.setRunMode(InitConfiguration.RunMode.TEST)
 			.build();
+			
+**Note:**
+
+more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before uploading the application to live ple ase delete this code .
 
 	//Initialization For Video ads
 	AdViewVideoManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
