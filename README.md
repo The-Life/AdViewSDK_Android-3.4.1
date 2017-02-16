@@ -78,14 +78,11 @@ To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdVi
 
 3. In order to add new ad platforms please copy the .jar file of that particular ad platform provided by AdView to your lib folder and follow the same for all other ad platforms you would like to integrate.  
 
-![add SDK](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/IV.png)
- 
+![add SDK](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/IV.png)						  
 **Note :**
 
 1. To integrate Umeng SDK, you need to put the files of umeng_res given in the AdViewSDK_Android-3.4.1 to your application resource folder, and add corresponding permissions in the Andoid manifest file.
 2.To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdViewSDK_Android-3.4.1 to your application resource folder, and add corresponding permissions in the Andoid manifest file.
-
-
 
 
 ##IV. AndroidManifest.xml text configuration
@@ -134,6 +131,7 @@ The given code should be added to in AndroidManifest file for AdView, as some pl
 
 
 **4.3 Appointed app channel**
+
 Please add the below code in the AndroidMainfest file:
 ```
 	<meta-data android:name="AdView_CHANNEL" android:value=“GFAN">
@@ -163,7 +161,7 @@ Please add the below code in the AndroidMainfest file:
 	.setBannerCloseble(BannerSwitcher.CANCLOSED)
 	//interstitial switcher can be closed
 	.setInstlCloseble(InstlSwitcher.CANCLOSE ) ''
-	//more log under test mode , before uploading the application to live please delete this code .
+	//this code is useful to get logs while testing , before uploading the application to live please delete this code .
 	.setRunMode(RunMode.TEST)
 	// Default situation. After setting, html5 and not-html5 ads can be received,
 	while Html5Switcher.SUPPORT can only receive html5 ad .setHtml5Switcher(Html5Switcher.NONSUPPORT)
@@ -203,12 +201,15 @@ Add the following code to your activity:
 //		   .setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 		   .setRunMode(InitConfiguration.RunMode.TEST)
 		   .build(); 
-		   
+	
+```
+
 **Note:**
 
-more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before uploading the application to live please delete this code .
+This code is useful to get logs while testing, before uploading the application to live 
+please delete the this code (setRunMode(InitConfiguration.RunMode.TEST))
 
-	  
+```	  
 
 	 //Initialization for Banner
 	 AdViewBannerManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});      
@@ -225,7 +226,8 @@ more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before u
 
 **6.2 Ad Banner events handling**
 
-To receive events from ad, you should implement an event listener interface **AdViewBannerListener**.
+To receive events from ad, **you should implement an event listener interface AdViewBannerListener**.
+After you implement this listener you will get the following methods.  
 
 ```
      public interface AdViewBannerListener{
@@ -269,7 +271,7 @@ You can refer to the code of AdBannerActivity in AdViewDemo Project.
 
 **Note:**
 
-Since interstitial ad has a certain life cycle, Please do not wait too long after the request to call the screen display method, so as to avoid advertising invalid.
+Since interstitial ad has a certain life cycle, Please do not wait too long after the request to call showAd method, so as to avoid invalid advertising.
 
 Add the following code to your activity:
 
@@ -282,11 +284,14 @@ Add the following code to your activity:
 //			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 			.setRunMode(InitConfiguration.RunMode.TEST)
 			.build(); 
-			
+```
 			
 **Note:**
 
-more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before uploading the application to live ple ase delete this code .
+This code is useful to get logs while testing, before uploading the application to live 
+please delete the this code (setRunMode(InitConfiguration.RunMode.TEST))
+
+```
 
 	//Initialization for interstitual advertisement
 	AdViewInstlManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
@@ -303,7 +308,9 @@ more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before u
 
 **7.2 Ad Interstitial Event Handling**
 
-To receive events from ad, you should implement an event listener interface **AdViewInstlListener** .
+To receive events from ad, **you should implement an event listener interface AdViewInstlListener**.
+After you implement this listener you will get the following methods.  
+
 
 ```
     public interface AdViewInstlListener {
@@ -346,7 +353,7 @@ To receive events from ad, you should implement an event listener interface **Ad
 	// request interstitial ads after initialization 
 	AdViewInstlManager.getInstance(this).requestAd(this,MainActivity.key2);
 
-	// You need to call it when the ads need to be displayed, the return is not null (review) means there’s an ad to return, 
+	// You need to call it when the ads need to be displayed, the return is not null (review)  there’s an ad to return, 
 	otherwise it does not get ads.
 	// The returned view can be placed in a customcontainer, such as dialog
 	AdViewInstlManager.getInstance(this).getInstlView (key);
@@ -377,11 +384,12 @@ Add the following code to your activity:
 //			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 			.setRunMode(InitConfiguration.RunMode.TEST)
 			.build();
-			
+```		
 **Note:**
+This code is useful to get logs while testing, before uploading the application to live 
+please delete the this code (setRunMode(InitConfiguration.RunMode.TEST))
 
-more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before uploading the application to live ple ase delete this code .
-
+```
 	//Intialization for Open Screen ad
 	AdViewSpreadManager.getInstance(this).init(initConfiguration, new String[]{MainActivity.SDK_KEY});
 
@@ -399,7 +407,9 @@ more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before u
 
 **8.2 Ad Opening screen Event Handling**
 
-To receive events from ad, you should implement an event listener interface **AdViewSpreadListener**.
+To receive events from ad, **you should implement an event listener interface AdViewSpreadListener**.
+After you implement this listener you will get the following methods.  
+
 
 ```
     public interface AdViewSpreadListener {
@@ -488,10 +498,13 @@ Add the following code to your activity:
 //			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 			.setRunMode(InitConfiguration.RunMode.TEST)
 			.build();
-			
+```			
 **Note:**
 
-more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before uploading the application to live ple ase delete this code .
+This code is useful to get logs while testing, before uploading the application to live 
+please delete the this code (setRunMode(InitConfiguration.RunMode.TEST))
+
+```
 	//Intialization for Native advertisement
 	AdViewNativeManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
 
@@ -536,7 +549,9 @@ more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before u
 ```
 
 **9.2 Ad Native Event Handling**
-To receive events from ad, you should implement an event listener interface **AdViewNativeListener** .
+To receive events from ad, **you should implement an event listener interface AdViewNativeListener**.
+After you implement this listener you will get the following methods.  
+
 
 ```
     public interface AdViewNativeListener {
@@ -574,11 +589,14 @@ Add the following code in activity,
 //			.setSupportHtml(InitConfiguration.Html5Switcher.SUPPORT)
 			.setRunMode(InitConfiguration.RunMode.TEST)
 			.build();
-			
+
+```
 **Note:**
 
-more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before uploading the application to live ple ase delete this code .
+This code is useful to get logs while testing, before uploading the application to live 
+please delete the this code (setRunMode(InitConfiguration.RunMode.TEST))
 
+```
 	//Initialization For Video ads
 	AdViewVideoManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
 
@@ -593,7 +611,9 @@ more log under test mode (setRunMode(InitConfiguration.RunMode.TEST)) , before u
 
 **10.2 Ad Video Event Handling**
 
-To receive events from ad, you should implement an event listener interface **AdViewVideoListener** .
+To receive events from ad, **you should implement an event listener interface AdViewVideoListener**.
+After you implement this listener you will get the following methods.  
+
 
 ```
     public interface AdViewVideoListener{
