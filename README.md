@@ -712,8 +712,8 @@ AdView is dynamically call, it does not have to mix. Advertising agency code has
 ( The below code can be copied in the sample)
 
 ```
-#-keep public class com.kyview.** {*;} 
-#-keep public class com.kuaiyou.** {*;} 
+-keep public class com.kyview.** {*;} 
+-keep public class com.kuaiyou.** {*;} 
 
 ```
 
