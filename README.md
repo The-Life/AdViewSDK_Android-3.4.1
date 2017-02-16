@@ -85,7 +85,9 @@ To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdVi
 2.To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdViewSDK_Android-3.4.1 to your application resource folder, and add corresponding permissions in the Andoid manifest file.
 
 
-**3.1 Add Google Play Services to your App
+**3.1 Add Google Play Services to your App**
+#Action Needed
+
 
 you'll need to integrate the Google Play Services SDK into your app.
 
@@ -625,6 +627,7 @@ To receive events from ad, you should implement an event listener interface **Ad
 You can refer to the code of AdVideoActivity in AdView Demo Project.
 
 ##XI. Add custom ad platform
+#Action Needed
 
 Sometimes developers would like to add a platform which is not aggregated, Adview provide ways to meet this demand.
 
@@ -634,7 +637,8 @@ There’s a “Custom ad platform” in add ad platform . Developer needs to fil
 ![custom ad platform](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VI.png)
  
 
- **11.1 For Custom platform (Amazon) function implementation**                                                                                                 
+ **11.1 For Custom platform (Amazon) function implementation**    
+ 
 
 ```
 	// you can visit https://developer.amazon.com/sdk/mobileads.html
@@ -701,6 +705,8 @@ Please add the below code in the AndroidMainfest file:
 
 # Action Needed ! (do we need to add this file in progurad file ? ) 
 **13.1 What if an application wants to mix (ProGuard)?**
+
+##Action Needed
 
 AdView is dynamically call, it does not have to mix. Advertising agency code has been independently mixed, if you need to mixed your own code, you can add the following content at the beginning of the file proguard.cfg. More details please refer to the code in sample. 
 ( The below code can be copied in the sample)
