@@ -345,6 +345,7 @@ After you implement this listener you will get the following methods.
 
 **7.3 Create custom style interstitial**
 
+You can customize the popup Intrstitial ad, please refer AdInstlActivity for the entire code 
 ```
 	// You need to set the user-managed mode when initialization, and you must manually call the display
 	//after the setting   
@@ -449,6 +450,7 @@ After you implement this listener you will get the following methods.
 ```
 
 **8.3 Custom countdown notification style on the top of opening screen**
+#Action needed 
 
 ```
 	// Skip button will appears on the top after settings
@@ -651,6 +653,34 @@ After you implement this listener you will get the following methods.
 **Note:**
 
 You can refer to the code of AdVideoActivity in AdView Demo Project.
+
+##XIII. Adding Proguard-rules 
+
+If you have a ProGuard configuration file please add the below lines of code in proguard-rules.pro file
+
+```
+	-keep public class com.kyview.** {*;} 
+	-keep public class com.kuaiyou.** {*;} 
+
+```
+In case you add other adnetworks ( like InMobi, AdMob etc..,) add their proguard rules to proguard-rules.pro file.
+
+For example In case of InMobi add the below lines of code to the proguard-rules.pro.
+```
+	-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient{
+	    public *;
+	}
+
+	-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info{
+	    public *;
+	}
+
+	-keep class com.inmobi.**
+	{ *; }
+
+	-dontwarn com.inmobi.**
+
+```
 
 ##XI. Add custom ad platform
 #Action Needed
