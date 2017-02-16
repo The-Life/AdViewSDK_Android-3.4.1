@@ -21,11 +21,11 @@
 
 [X. Create video advertising](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#x-create-video-advertising)
 
-[XI. Add custom ad platform](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xi-add-custom-ad-platform)
+[XI. Adding Proguard-rules](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xi-adding-proguard-rules) 
 
-[XII. Appointed app channel](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xii-appointed-app-channel)
+[XII. Add custom ad platform](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xii-add-custom-ad-platform)
 
-[XIII. Frequently Asked Questions](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xiii-frequently-asked-questions)
+[XIII. Contact us](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xiii-contact-us)
 
 
 
@@ -212,13 +212,13 @@ please delete the this code (setRunMode(InitConfiguration.RunMode.TEST))
 ```	  
 
 	 //Initialization for Banner
-	 AdViewBannerManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});      
+	 AdViewBannerManager.getInstance(this).init(initConfiguration,new String[]{SDK_KEY});      
 
 	 // request banner ads after initialization
-	 AdViewBannerManager.getInstance(this).requestAd(this,key, this);
+	 AdViewBannerManager.getInstance(this).requestAd(this,SDK_KEY, this);
 
 	 // Gets the currently requested banner View,upload it to your own layout.
-	 View view = AdViewBannerManager.getInstance(this).getAdViewLayout(this,key);
+	 View view = AdViewBannerManager.getInstance(this).getAdViewLayout(this,SDK_KEY);
 	 layout.addView(view);
 
 
@@ -294,14 +294,14 @@ please delete the this code (setRunMode(InitConfiguration.RunMode.TEST))
 ```
 
 	//Initialization for interstitual advertisement
-	AdViewInstlManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
+	AdViewInstlManager.getInstance(this).init(initConfiguration,new String[]{SDK_KEY});
 
 
 	// interstitial ad request after initialization, ad request and display, used alone
-	AdViewInstlManager.getInstance(this).requestAd(this,MainActivity.SDK_KEY);
+	AdViewInstlManager.getInstance(this).requestAd(this,SDK_KEY);
 
 	// After ad request succeed , call the display ad
-	AdViewInstlManager.getInstance(this).showAd(this,MainActivity.SDK_KEY);
+	AdViewInstlManager.getInstance(this).showAd(this,SDK_KEY);
 
 
 ```
@@ -352,18 +352,18 @@ You can customize the popup Intrstitial ad, please refer AdInstlActivity for the
 	InitConfiguration.setInstlControlMode(InstlControlMode.USERCONTROL);
 
 	// request interstitial ads after initialization 
-	AdViewInstlManager.getInstance(this).requestAd(this,MainActivity.key2);
+	AdViewInstlManager.getInstance(this).requestAd(this,SDK_KEY);
 
 	// You need to call it when the ads need to be displayed, the return is not null (review)  there’s an ad to return, 
 	otherwise it does not get ads.
 	// The returned view can be placed in a customcontainer, such as dialog
-	AdViewInstlManager.getInstance(this).getInstlView (key);
+	AdViewInstlManager.getInstance(this).getInstlView (SDK_KEY);
 
 	// Display report method should be called when successfully display (required)
-	AdViewInstlManager.getInstance(this).reportImpression(key);
+	AdViewInstlManager.getInstance(this).reportImpression(SDK_KEY);
 
 	// When the ad is clicked, the click event handling method should be called ,otherwise there will no response(required)
-	AdViewInstlManager.getInstance(this).reportClick(key);
+	AdViewInstlManager.getInstance(this).reportClick(SDK_KEY);
 
 ```
 
@@ -392,7 +392,7 @@ please delete the this code (setRunMode(InitConfiguration.RunMode.TEST))
 
 ```
 	//Intialization for Open Screen ad
-	AdViewSpreadManager.getInstance(this).init(initConfiguration, new String[]{MainActivity.SDK_KEY});
+	AdViewSpreadManager.getInstance(this).init(initConfiguration, new String[]{SDK_KEY});
 
 
 	// Set the logo at the bottom of opening screen (not required), you can also upload local images or images link.
@@ -402,7 +402,7 @@ please delete the this code (setRunMode(InitConfiguration.RunMode.TEST))
 	AdViewSpreadManager.getInstance(this).setSpreadBackgroudColor( Color.WHITE);
 
 	// Request opening screen ads
-	AdViewSpreadManager.getInstance(this).request(this,MainActivity.SDK_KEY,(RelativeLayout) findViewById(R.id.spreadlayout), this);
+	AdViewSpreadManager.getInstance(this).request(this,SDK_KEY,(RelativeLayout) findViewById(R.id.spreadlayout), this);
 
 ```
 
@@ -508,11 +508,11 @@ please delete the this code (setRunMode(InitConfiguration.RunMode.TEST))
 
 ```
 	//Intialization for Native advertisement
-	AdViewNativeManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
+	AdViewNativeManager.getInstance(this).init(initConfiguration,new String[]{SDK_KEY});
 
 
 	//Initialized native ads should custom ad layout in advance, and apply native ad ID at app background
-	AdViewNativeManager.getInstance(this).requestAd(this,MainActivity.SDK_KEY, 2,this); 
+	AdViewNativeManager.getInstance(this).requestAd(this,SDK_KEY, 2,this); 
 
 	//set native callback interface
 	@Override
@@ -600,14 +600,14 @@ please delete the this code (setRunMode(InitConfiguration.RunMode.TEST))
 
 ```
 	//Initialization For Video ads
-	AdViewVideoManager.getInstance(this).init(initConfiguration,new String[]{MainActivity.SDK_KEY});
+	AdViewVideoManager.getInstance(this).init(initConfiguration,new String[]{SDK_KEY});
 
 	//Request video ads after initialization. Request and display ads should be used separately.
-	AdViewVideoManager.getInstance(this).requestAd(this,MainActivity.SDK_KEY,this);
+	AdViewVideoManager.getInstance(this).requestAd(this,SDK_KEY,this);
 
 	//set video callback interface
 	// Call display ad after ad request succeed.
-	AdViewVideoManager.getInstance(this).playVideo(this,MainActivity.SDK_KEY);
+	AdViewVideoManager.getInstance(this).playVideo(this,SDK_KEY);
 
 ```
 
@@ -747,7 +747,7 @@ There’s a “Custom ad platform” in add ad platform . Developer needs to fil
 ```
 **You can refer the code in AdViewDemo project --> BannerActivity for implementation of Amazon ad; ** 
 
-**13.2 Contact us** 
+##XIII. Contact us 
 
 Users can login Adview, there are service E-mail, service contact number and enterprise QQ customer service at the bottom of the homepage 
 
