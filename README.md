@@ -254,20 +254,6 @@ To receive events from ad, you should implement an event listener interface **Ad
 **Note:**
 You can refer to the code of AdBannerActivity in AdViewDemo Project.
 
-#Action needed 
-**Increase part of the platform size Interface:**
-
-**Note:**
-
-If you want banner advertisement directly from ad networks use this below configuration accordingly you choosen ad Network.
-
-
-| Platform | Constant | examples |
-| --- | --- | --- |
-| InMobi | INMOBI_AD_UNIT_728x90 INMOBI_AD_UNIT_468x60 INMOBI_AD_UNIT_320x50 | InitConfiguration.setAdInMobiSize(Ad InMobiSize. .INMOBI_AD_UNIT_320x50); | 
-| AdMob | BANNER LARGE_BANNER MEDIUM_RECTANGLE FULL_BANNER LEADERBOARD SMART_BANNER | InitConfiguration.setAdMobSize(AdMobSize.BANNER);|
-|Tencent Gdt| BANNER BANNER SMALL *SMART BAMMER* |  InitConfiguration.setAdGdtSize(AdGdtSize.BANNER); |
-| Adview Bidding, remnant| BANNER_AUTO_FILL          BANNER_SMART          BANNER_320X50      BANNER_480X75    BANNER_728X90 | InitConfiguration.setAdSize(AdSize.BANNER_SMART); | 
 
 ##VII. Create interstitial advertising
 
