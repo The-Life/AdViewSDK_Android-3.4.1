@@ -696,38 +696,6 @@ Please add the below code in the AndroidMainfest file:
 
 (You must add the above code,otherwise you application won't be able to pass the review);
 
-#Action needed (may we know the need of this code and where is it useful ? ) 
-AdViewTargeting.setChannel, the former interface has been invalid;
-Currently the channels that Adview support are as follow:
-
-      -EOE(????)
-      -GOOGLEMARKET(????? ?)
-      -APPCHINA(???)
-      -HIAPK(????)
-      GFAN(??)
-      GOAPK(??)
-      NDUOA(N??)
-      91Store(??91)
-      LIQUCN(??)
-      WAPTW(??)
-      ANDROIDCN(? ???)
-      GGDWON(G??)
-      ANDROIDAI(????)
-      STARANDROID(????)
-      ANDROIDD(??)
-      YINGYONGSO(???)
-      IMOBILE(????)
-      SOUAPP(? ??)
-      MUMAYI(???)
-      MOBIOMNI(??)
-      PAOJIAO(???)
-      AIBALA(?????)
-      COOLAPK(???)
-      ANFONE(??)
-      APKOK(???)
-      360MARKET(360??)
-
-If there’s no configuration or configure other value, all seemed as “OTHER”; There are links to various markets in Mobile Ads (http://t.adview.cn/);
 
 ##XIII. Frequently Asked Questions
 
