@@ -74,7 +74,8 @@ To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdVi
 ##III. Add SDK
 
 1. Clone or download AdViewSDK_Android-3.4.1 package here.In the AdViewSDK_Android-3.4.1 folder contains libs folder ,it contains the SDK for all ad platforms. (Libinfo.pdf has the ad platform instructions corresponding to each jar.)
-2. Please copay and paste AdViewSDK_Android.jar, android-support-v4.jar into your application lib folder
+2. Please copy and paste **AdViewSDK_Android.jar, android-support-v4.jar and google-play-services.jar** into your application lib folder.you'll need to integrate the Google Play Services SDK into your app.This is mandatory; without Google Play Services, the SDK cannot function.
+
 3. In order to add new ad platforms please copy the .jar file of that particular ad platform provided by AdView to your lib folder and follow the same for all other ad platforms you would like to integrate.  
 
 ![add SDK](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/IV.png)
@@ -85,13 +86,7 @@ To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdVi
 2.To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdViewSDK_Android-3.4.1 to your application resource folder, and add corresponding permissions in the Andoid manifest file.
 
 
-**3.1 Add Google Play Services to your App**
-#Action Needed
 
-
-you'll need to integrate the Google Play Services SDK into your app.
-
-This is mandatory; without Google Play Services, the SDK cannot function.
 
 ##IV. AndroidManifest.xml text configuration
 
@@ -136,6 +131,17 @@ The given code should be added to in AndroidManifest file for AdView, as some pl
 	<activity android:name="com.kuaiyou.video.AdviewWebView"/>
 
 ```
+
+
+**4.3 Appointed app channel**
+Please add the below code in the AndroidMainfest file:
+```
+	<meta-data android:name="AdView_CHANNEL" android:value=“GFAN">
+	</meta-data>
+```
+
+(You must add the above code,otherwise you application won't be able to pass the review);
+
 
 ##V. Acquire ad configurations
 
@@ -690,15 +696,6 @@ There’s a “Custom ad platform” in add ad platform . Developer needs to fil
 
 ```
 **You can refer the code in AdViewDemo project --> BannerActivity for implementation of Amazon ad; ** 
-
-##XII. Appointed app channel
-Please add the below code in the AndroidMainfest file:
-```
-	<meta-data android:name="AdView_CHANNEL" android:value=“GFAN">
-	</meta-data>
-```
-
-(You must add the above code,otherwise you application won't be able to pass the review);
 
 
 ##XIII. Frequently Asked Questions
