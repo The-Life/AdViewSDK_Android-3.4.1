@@ -654,7 +654,7 @@ After you implement this listener you will get the following methods.
 
 You can refer to the code of AdVideoActivity in AdView Demo Project.
 
-##XIII. Adding Proguard-rules 
+##XI. Adding Proguard-rules 
 
 If you have a ProGuard configuration file please add the below lines of code in proguard-rules.pro file
 
@@ -682,7 +682,7 @@ For example In case of InMobi add the below lines of code to the proguard-rules.
 
 ```
 
-##XI. Add custom ad platform
+##XII. Add custom ad platform
 #Action Needed
 
 Sometimes developers would like to add a platform which is not aggregated, Adview provide ways to meet this demand.
@@ -746,25 +746,6 @@ There’s a “Custom ad platform” in add ad platform . Developer needs to fil
 
 ```
 **You can refer the code in AdViewDemo project --> BannerActivity for implementation of Amazon ad; ** 
-
-
-##XIII. Frequently Asked Questions
-
-# Action Needed ! (do we need to add this file in progurad file ? ) 
-**13.1 What if an application wants to mix (ProGuard)?**
-
-##Action Needed
-
-AdView is dynamically call, it does not have to mix. Advertising agency code has been independently mixed, if you need to mixed your own code, you can add the following content at the beginning of the file proguard.cfg. More details please refer to the code in sample. 
-( The below code can be copied in the sample)
-
-```
--keep public class com.kyview.** {*;} 
--keep public class com.kuaiyou.** {*;} 
-
-```
-
- Currently Adview SDK mixed support proguard4.6 version or above, developers can go to the proguard official website http://sourceforge.net/ projects/proguard/files/proguard/ to download 4.6 version or above. If you want to upgrade, just replace the downloaded version with “android-sdk- windows\tools\proguard” 
 
 **13.2 Contact us** 
 
