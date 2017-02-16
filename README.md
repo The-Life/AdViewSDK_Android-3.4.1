@@ -634,8 +634,7 @@ There’s a “Custom ad platform” in add ad platform . Developer needs to fil
 ![custom ad platform](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VI.png)
  
 
-# Action needed - what is the need of this ? can we remove this if not needed ? 
- **11.1 For Custom platform (Amazon) function implementation **                                                                                                 
+ **11.1 For Custom platform (Amazon) function implementation**                                                                                                 
 
 ```
 	// you can visit https://developer.amazon.com/sdk/mobileads.html
