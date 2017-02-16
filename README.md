@@ -84,6 +84,13 @@ To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdVi
 1. To integrate Umeng SDK, you need to put the files of umeng_res given in the AdViewSDK_Android-3.4.1 to your application resource folder, and add corresponding permissions in the Andoid manifest file.
 2.To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdViewSDK_Android-3.4.1 to your application resource folder, and add corresponding permissions in the Andoid manifest file.
 
+
+**3.1 Add Google Play Services to your App
+
+you'll need to integrate the Google Play Services SDK into your app.
+
+This is mandatory; without Google Play Services, the SDK cannot function.
+
 ##IV. AndroidManifest.xml text configuration
 
 **4.1 Add permission code**
