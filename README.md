@@ -757,7 +757,3 @@ Users can login Adview, there are service E-mail, service contact number and ent
 
 
 
-| Command | Description |
-| --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
