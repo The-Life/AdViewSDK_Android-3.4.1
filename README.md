@@ -754,3 +754,10 @@ There’s a “Custom ad platform” in add ad platform . Developer needs to fil
 Users can login Adview, there are service E-mail, service contact number and enterprise QQ customer service at the bottom of the homepage 
 
 ![custom ad platform](https://github.com/vinith-cit/Images-for-github/blob/master/VII.png)
+
+
+
+| Command | Description |
+| --- | --- |
+| git status | List all new or modified files |
+| git diff | Show file differences that haven't been staged |
