@@ -683,7 +683,6 @@ For example In case of InMobi add the below lines of code to the proguard-rules.
 ```
 
 ##XII. Add custom ad platform
-#Action Needed
 
 Sometimes developers would like to add a platform which is not aggregated, Adview provide ways to meet this demand.
 
