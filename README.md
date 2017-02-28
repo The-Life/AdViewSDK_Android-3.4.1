@@ -22,10 +22,10 @@
 [X. Create video advertising](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#x-create-video-advertising)
 
 [XI. Adding Proguard-rules](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xi-adding-proguard-rules) 
+[XII. Adding custom ad network]()
+[XIII. Add custom ad platform](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xii-add-custom-ad-platform)
 
-[XII. Add custom ad platform](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xii-add-custom-ad-platform)
-
-[XIII. Contact us](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xiii-contact-us)
+[XIV. Contact us](https://github.com/vinith-cit/AdViewSDK_Android-3.4.1/blob/master/README.md#xiii-contact-us)
 
 
 
@@ -653,6 +653,17 @@ After you implement this listener you will get the following methods.
 **Note:**
 
 You can refer to the code of AdVideoActivity in AdView Demo Project.
+
+##XII. Adding custom ad network
+![Inmobi 1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi%201.png)
+![Inmobi 2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi2.jpg)
+![Inmobi 3](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi3.jpg)
+![Inmobi 4](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi4.jpg)
+![Inmobi 5](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi5.jpg)
+
+
+
+
 
 ##XI. Adding Proguard-rules 
 
