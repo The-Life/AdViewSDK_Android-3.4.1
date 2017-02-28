@@ -700,9 +700,9 @@ Sometimes developers would like to add a platform which is not aggregated, Advie
 There’s a “Custom ad platform” in add ad platform . Developer needs to fill in app ID1, this is the name of a function which needs client side to complete. The function of this function is to call the ad platform interface . As for App ID2, just fill in something, otherwise you cannot save it.
  
  
-![custom ad platform](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/page1.png)
+![custom ad platform](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/custom%20platform1.png)
 
-![custom add platform2](https://github.com/vinith-cit/Images-for-github/blob/master/custom%20platform%202.png?raw=true)
+![custom add platform2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/custom%20platform%202.png)
  
 
  **11.1 For Custom platform (Amazon) function implementation**    
