@@ -78,7 +78,7 @@ To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdVi
 1. Clone or download AdViewSDK_Android-3.4.1 package here.In the AdViewSDK_Android-3.4.1 folder contains libs folder ,it contains the SDK for all ad platforms. (Libinfo.pdf has the ad platform instructions corresponding to each jar.)
 2. Please copy and paste **AdViewSDK_Android.jar, android-support-v4.jar and google-play-services.jar** into your application lib folder.you'll need to integrate the Google Play Services SDK into your app.This is mandatory; without Google Play Services, the SDK cannot function.
 
-3. In order to add new ad platforms please copy the .jar file of that particular ad platform provided by AdView to your lib folder and follow the same for all other ad platforms you would like to integrate.  
+3. In order to add **new ad network** please copy the .jar file of that particular ad platform provided by AdView to your lib folder and follow the same for all other ad platforms you would like to integrate. In case of InMobi add the InMobi.jar and Picaso.jar files.  
 
 ![add SDK](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/IV.png)						  
 **Note :**
@@ -656,16 +656,6 @@ After you implement this listener you will get the following methods.
 
 You can refer to the code of AdVideoActivity in AdView Demo Project.
 
-##XII. Adding custom ad network
-![Inmobi 1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi%201.png)
-![Inmobi 2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi2.jpg)
-![Inmobi 3](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi3.jpg)
-![Inmobi 4](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi4.jpg)
-![Inmobi 5](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi5.jpg)
-
-
-
-
 
 ##XI. Adding Proguard-rules 
 
@@ -694,6 +684,38 @@ For example In case of InMobi add the below lines of code to the proguard-rules.
 	-dontwarn com.inmobi.**
 
 ```
+
+
+##XII. Adding custom ad network
+
+AdView has integrated various ad netwroks (InMobi, AdMob, etc..,) where you are given flexibility to add the ad netwrok of your choice and prioritize accordingly, there are various advantages of integrating more than one ad networks to monetize your app, some them imcclude
+--> Good fill rates - we suggest to include on an avrage of 3 ad netwroks for good fill rates
+--> More revenue
+--> You can prioritize according to the ad platform performance
+
+
+1. In your publisher dashboard http://adview.com/user/appreport click on the "App Management" tab --> click "Configure" against your app name which you want to add custom ad networks, then click on "Add Platform" button (out of China or within China depending on your region ) --> you will be redirected to the popup as shown below where you can choose ad netwrok of your choice.
+![Inmobi 0](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi%20in%20Dashboard.png)
+
+2.In this example we will be adding InMobi as the custom Ad Netwrok, select InMobi in the popup and click on "Add" button, this will redirect you to the AdView dashboard --> here turn on the switch again InMobi give the **priority(%)** of your choice then click on "not set" in InMobi row you will get  "Configure InMobi" popup with Signup link at the bottom which will redirect you to the below login page, complete the login procedure
+![Inmobi 22](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi%20configure%20dialg.png)
+
+ ![Inmobi 1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi%201.png)
+
+Please add the SDK of InMobi--> you can follow this procedure **Link**
+3. After login you will get the the account ID as shown in the below image, click on Add an App.  
+![Inmobi 2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi2.jpg)
+
+4. Please add your application ( the same application you want to add custom Ad platform in AdView) by filling in the details as asked in below imgae, in case of any proguard rules in the Ad Network integration part just copy and paste them in proguard-rules.pro file in your project.  
+![Inmobi 3](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi3.jpg)
+
+5. After adding the App  to InMobi then click on the application name, where you will be redirected to the below window, please click on the option marked in the below image to get Placement ID.  
+![Inmobi 4](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi4.jpg)
+
+6. Please copy the placement ID and Account ID which you need to add it in AdView dashobard as shown in the 2nd image 
+![Inmobi 5](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi5.jpg)
+
+In the same way you can configure different custom Ad Networks to your app (different Ad networks might demand different ID's to be configured ) 
 
 ##XII. Add custom ad platform
 
