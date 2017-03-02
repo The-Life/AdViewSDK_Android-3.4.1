@@ -32,34 +32,37 @@
 
 
 ##I. Register and configure SDK-KEY
-1. Visit AdView website http://www.adview.com and register Adview Account.
-2. Login "My Products" page, select "Publish App”
-3. Select “Android” follow the prompts to complete the relevant information About the application and you will get the sole unique SDK key
-4. Click “APP management” page→Configure : enter adID in“Not set”, turn on the switch, set the capacity to 100%, click “Save”. If you need more platform please turn on the switch, click “Add ad platform” and configure those respected ids. The cumulative percentage must be 100%.you can use AdView Auction Ads. Generally recommended number of platforms is 1-3.                     
+1. Visit AdView website http://www.adview.com and complete the registration process.
+2. After Login you will land on "My Products" page by default, select "Publish App”
+3. Select “Android” follow the prompts to complete the relevant information About the application and click on "Next" button at the end where you will be redirected to “APP management” page
+4. Under "App managemnet" page Click "Next" button at the bottom --> you will get the sole SDK key --> click "Finish" button at the bottom centre of the page and you will be redirected to the below page 
+![Bidding](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.1.png)
+
+5. Now click on "configure" against your appplication, then you will be redirected to “APP management” page → under the Ad format you want to configure (Banner,interstitial,video,open screen and native) open the switch against Auction ads and in case you want to add any custom ad networks (like InMobi, AdMob etc..,) click “Add ad platform”  and please refer to this link **insert link** for further steps, the cumulative percentage muste be 100%, Generally recommended number of platforms is 1-3.    
 ![Home page](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
 
-5.(Optional) if you wish to show prompt when you click on the ad - Under app management --> select "Edit" against your app, Switch on "Twice confirmation" button under "Advertising text settings".									                               
-![Bidding](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.1.png)
+6. (Optional) if you wish to show prompt when you click on the ad - Under app management --> select "Edit" against your app, Switch on "Twice confirmation" button under "Advertising text settings".	
 
 ![bidding-2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.2.png)
 
+
 **Notes:**
 
-1. We provide you with SDK that gives you the freedom to choose your favourite advertising agency. Apart from the bidding and remnant ,other ad platforms are third- party. The App key needed should be register and apply from corresponding official website, and then configure them to the corresponding platform at Adview background.
+1. In This Github repository we have provided you with Adview SDK which gives you the freedom to choose your favourite ad network. iN order to add custom ad netwroks please refer to this **proceedure - insert link**
 2. If you are fresher, you don’t know much about ad platform, which ad platform to choose or which ad platform revenue is stable, we suggest you to use bidding first.
-3. Bidding and remnant ads need to complement market information at background, and you will not get formal ads until pass reviewed. Before that all are test ads which do not charge.
+3. Bidding and remnant ads need to complement market information at background, if the status is "Under review" you will be receiving test ads. and you will get formal ads only after "pass reviewed" by the AdView team. 
 4. Ads will be shown of only those ad platforms for which the **switch** is on against them.						
-5. Only the "capacity" of those ad platforms for which the switch is on will be valid, the adplatform with higher proportion will get prior request, for all ad platforms with status as ON, the cumulative should be 100%. Other wise the your priority can't be saved.  
-6. For Banner ad, full screen/interstitial , opening screen ,etc, there’s a save button at the bottom of the page. You should click the save button every time you modify a ad format, otherwise the modification is invalid .
+5. Only the "capacity" of those ad platforms for which the switch is on will be valid, the ad newtork with higher proportion will get prior request, for all ad platforms with status as ON, the cumulative should be 100%. Other wise the your priority can't be saved.  
+6. For Banner ad, full screen/interstitial, opening screen ,etc, there’s a save button at the bottom of the page. You should click the save button every time you modify a ad format, otherwise the modification is invalid . 
 7. **Region optimization:** 
 Region optimization function means mobile phone displays the regional configured ads when it’s with in the region, while in foreign country it display foreign configured ads to meet the different demands to the maximum extent. When the region optimization function is closed, it does not distinguish between home and abroad. 
-
+8. In case you wish to show the same ad format more than once (like 2 banner ads) you need to create a new project (My product page --> publish app) with same credentials to get a new SDK key and the integration process remains same, you need not create a new project if the ad formats are different
 
 ##Ⅱ.About AdViewSDK_Android-3.4.1
 
 1. Clone or download AdViewSDK_Android-3.4.1 package to go ahead with the integration process. This package contains all files needed for smooth integration and some of the important fils include AdViewDemo,libs,umeng_res and wiyun_res.
 
-**AdViewDemo**
+**AdViewDemo*
 This folder contains Adview demo project which includes all types of ad format (banner,interstitial,video,native,open screen) sample code with explanation.
 
 **libs**
