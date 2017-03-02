@@ -38,7 +38,8 @@
 4. Under "App managemnet" page Click "Next" button at the bottom --> you will get the sole SDK key --> click "Finish" button at the bottom centre of the page and you will be redirected to the below page 
 ![Bidding](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.1.png)
 
-5. Now click on "configure" against your appplication, then you will be redirected to “APP management” page → under the Ad format you want to configure (Banner,interstitial,video,open screen and native) open the switch against Auction ads and in case you want to add any custom ad networks (like InMobi, AdMob etc..,) click “Add ad platform”  and please refer to this link **insert link** for further steps, the cumulative percentage muste be 100%, Generally recommended number of platforms is 1-3.    
+5. Now click on "configure" against your appplication, then you will be redirected to “APP management” page → under the Ad format you want to configure (Banner,interstitial,video,open screen and native) open the switch against Auction ads and in case you want to add any custom ad networks (like InMobi, AdMob etc..,) click “Add ad platform”  and please refer to this link [Adding custom ad network] (https://github.com/adview/AdViewSDK_Android-3.4.1/blob/master/README.md#xii-adding-custom-ad-network) for further steps, the cumulative percentage muste be 100%, Generally recommended number of platforms is 1-3.   
+
 ![Home page](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
 
 6. (Optional) if you wish to show prompt when you click on the ad - Under app management --> select "Edit" against your app, Switch on "Twice confirmation" button under "Advertising text settings".	
@@ -48,7 +49,7 @@
 
 **Notes:**
 
-1. In This Github repository we have provided you with Adview SDK which gives you the freedom to choose your favourite ad network. iN order to add custom ad netwroks please refer to this **proceedure - insert link**
+1. In This Github repository we have provided you with Adview SDK which gives you the freedom to choose your favourite ad network. in order to add custom ad netwroks please refer to this[Adding custom ad network] (https://github.com/adview/AdViewSDK_Android-3.4.1/blob/master/README.md#xii-adding-custom-ad-network)
 2. If you are fresher, you don’t know much about ad platform, which ad platform to choose or which ad platform revenue is stable, we suggest you to use bidding first.
 3. Bidding and remnant ads need to complement market information at background, if the status is "Under review" you will be receiving test ads. and you will get formal ads only after "pass reviewed" by the AdView team. 
 4. Ads will be shown of only those ad platforms for which the **switch** is on against them.						
@@ -62,7 +63,7 @@ Region optimization function means mobile phone displays the regional configured
 
 1. Clone or download AdViewSDK_Android-3.4.1 package to go ahead with the integration process. This package contains all files needed for smooth integration and some of the important fils include AdViewDemo,libs,umeng_res and wiyun_res.
 
-**AdViewDemo*
+**AdViewDemo**
 This folder contains Adview demo project which includes all types of ad format (banner,interstitial,video,native,open screen) sample code with explanation.
 
 **libs**
@@ -81,8 +82,7 @@ To integrate Wiyun SDK, you need to put the files of wiyun_res given in the AdVi
 1. Clone or download AdViewSDK_Android-3.4.1 package here.In the AdViewSDK_Android-3.4.1 folder contains libs folder ,it contains the SDK for all ad platforms. (Libinfo.pdf has the ad platform instructions corresponding to each jar.)
 2. Please copy and paste **AdViewSDK_Android.jar, android-support-v4.jar and google-play-services.jar** into your application lib folder.you'll need to integrate the Google Play Services SDK into your app.This is mandatory; without Google Play Services, the SDK cannot function.
 
-3. In order to add **new ad network** please copy the .jar file of that particular ad platform provided by AdView to your lib folder and follow the same for all other ad platforms you would like to integrate. In case of InMobi add the InMobi.jar and Picaso.jar files.Please refer for adding custom ad Network this procedure (https://github.com/adview/AdViewSDK_Android-3.4.1/blob/master/README.md#xii-adding-custom-ad-network).  
-
+3. In order to add **new ad network** please copy the .jar file of that particular ad platform provided by AdView to your lib folder and follow the same for all other ad platforms you would like to integrate. In case of **InMobi** add the **InMobi.jar** and **Picaso.jar** files.Please refer for adding custom ad Network this procedure [Adding custom ad network] (https://github.com/adview/AdViewSDK_Android-3.4.1/blob/master/README.md#xii-adding-custom-ad-network)
 ![add SDK](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/IV.png)						  
 **Note :**
 
@@ -400,7 +400,10 @@ please delete the this code (setRunMode(InitConfiguration.RunMode.TEST))
 	AdViewSpreadManager.getInstance(this).init(initConfiguration, new String[]{SDK_KEY});
 
 
-	// Set the logo at the bottom of opening screen (not required), you can also upload local images or images link.
+	// Set the logo at the bottom of opening screen (not required), you can also upload local images or images 
+	
+	
+	.
 	AdViewSpreadManager.getInstance(this).setSpreadLogo(R.drawable.spread_logo);
 
 	// Set background color of opening screen( not required)
@@ -705,7 +708,7 @@ AdView has integrated various ad netwroks (InMobi, AdMob, etc..,) where you are 
 
  ![Inmobi 1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi%201.png)
 
-Please add the SDK of InMobi--> you can follow this procedure **https://github.com/adview/AdViewSDK_Android-3.4.1/blob/master/README.md#iii-add-sdk**
+Please add the SDK of InMobi--> you can follow this procedure [Add SDK](https://github.com/adview/AdViewSDK_Android-3.4.1/blob/master/README.md#iii-add-sdk)
 3. After login you will get the the account ID as shown in the below image, click on Add an App.  
 ![Inmobi 2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/inmobi2.jpg)
 
